@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
 import coil.api.load
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import ru.geeekbrains.princeschdailypicture.R
 import ru.geeekbrains.princeschdailypicture.databinding.FragmentMainBinding
 import ru.geeekbrains.princeschdailypicture.repository.PictureOfTheDayData
@@ -23,6 +25,8 @@ class MainFragment : Fragment() {
         ViewModelProvider(this).get(MainViewModel::class.java)
     }
 
+    private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentMainBinding.inflate(inflater)
@@ -33,6 +37,8 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
         viewModel.sendServerRequest()
+        bottomSheetBehavior = BottomSheetBehavior.from(binding.includeLayout.bottomSheetContainer)
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
     }
 
     private fun renderData(data: PictureOfTheDayData) {
@@ -41,21 +47,27 @@ class MainFragment : Fragment() {
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
                 if (url.isNullOrEmpty()) {
-                    // TODO Отобразите ошибку
-                    //showError("Сообщение, что ссылка пустая")
+                    with(binding){
+                        main.showMessage("URL is null or empty")
+                    }
                 } else {
-                        binding.imageView.load(data.serverResponseData.hdurl)
-                        {
+                    with(binding){
+                        loadingLayout.hide()
+                        includeLayout.bottomSheetDescriptionHeader.text = data.serverResponseData.title
+                        includeLayout.bottomSheetDescription.text = data.serverResponseData.explanation
+                        imageView.load(data.serverResponseData.hdurl){
                             error(R.drawable.ic_no_photo_vector)
+                        }
                     }
                 }
             }
             is PictureOfTheDayData.Loading -> {
-                // TODO Отобразите загрузку
-                //showLoading()
+                binding.loadingLayout.show()
             }
             is PictureOfTheDayData.Error -> {
-                // TODO Отобразите ошибку
+                with(binding){
+                    main.showMessage(data.toString())
+                }
             }
         }
     }
