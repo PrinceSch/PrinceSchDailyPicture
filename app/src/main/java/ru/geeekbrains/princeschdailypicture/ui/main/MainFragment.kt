@@ -3,14 +3,16 @@ package ru.geeekbrains.princeschdailypicture.ui.main
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import coil.api.load
+import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import ru.geeekbrains.princeschdailypicture.MainActivity
 import ru.geeekbrains.princeschdailypicture.R
 import ru.geeekbrains.princeschdailypicture.databinding.FragmentMainBinding
 import ru.geeekbrains.princeschdailypicture.repository.PictureOfTheDayData
@@ -30,9 +32,57 @@ class MainFragment : Fragment() {
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         _binding = FragmentMainBinding.inflate(inflater)
+        setActionBar()
         return binding.root
+    }
+
+    private var isMain = true
+
+    private fun setActionBar() {
+        (context as MainActivity).setSupportActionBar(binding.bottomAppBar)
+        setHasOptionsMenu(true)
+        binding.fab.setOnClickListener {
+            with(binding) {
+                if (isMain) {
+                    isMain = false
+                    bottomAppBar.navigationIcon = null // лучше придумать замену бургеру
+                    bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+                    fab.setImageDrawable(
+                        ContextCompat.getDrawable(
+                            requireContext(),
+                            R.drawable.ic_back_fab
+                        )
+                    )
+                    binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar_other_screen)
+                } else {
+                    isMain = true
+                    binding.bottomAppBar.navigationIcon =
+                        ContextCompat.getDrawable(
+                            requireContext(),
+                            R.drawable.ic_baseline_menu_24
+                        )
+                    binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
+                    binding.fab.setImageDrawable(
+                        ContextCompat.getDrawable(
+                            requireContext(),
+                            R.drawable.ic_plus_fab
+                        )
+                    )
+                    binding.bottomAppBar.replaceMenu(R.menu.menu_app_bar)
+                }
+            }
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_app_bar, menu)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,11 +91,12 @@ class MainFragment : Fragment() {
         viewModel.sendServerRequest()
 
         bottomSheetBehavior = BottomSheetBehavior.from(binding.includeLayout.bottomSheetContainer)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
 
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
+                data =
+                    Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
             })
         }
     }
@@ -56,15 +107,17 @@ class MainFragment : Fragment() {
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
                 if (url.isNullOrEmpty()) {
-                    with(binding){
+                    with(binding) {
                         main.showMessage("URL is null or empty")
                     }
                 } else {
-                    with(binding){
+                    with(binding) {
                         loadingLayout.hide()
-                        includeLayout.bottomSheetDescriptionHeader.text = data.serverResponseData.title
-                        includeLayout.bottomSheetDescription.text = data.serverResponseData.explanation
-                        imageView.load(data.serverResponseData.hdurl){
+                        includeLayout.bottomSheetDescriptionHeader.text =
+                            data.serverResponseData.title
+                        includeLayout.bottomSheetDescription.text =
+                            data.serverResponseData.explanation
+                        imageView.load(data.serverResponseData.url) {
                             error(R.drawable.ic_no_photo_vector)
                         }
                     }
@@ -74,11 +127,23 @@ class MainFragment : Fragment() {
                 binding.loadingLayout.show()
             }
             is PictureOfTheDayData.Error -> {
-                with(binding){
+                with(binding) {
                     main.showMessage(data.toString())
                 }
             }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.app_bar_fav -> Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT).show()
+            R.id.app_bar_search -> Toast.makeText(context, "Settings", Toast.LENGTH_SHORT).show()
+            android.R.id.home -> {
+                BottomNavigationDrawerFragment.newInstance()
+                    .show(requireActivity().supportFragmentManager, "")
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onDestroy() {
@@ -86,8 +151,8 @@ class MainFragment : Fragment() {
         _binding = null
     }
 
-    companion object{
-        fun newInstance()= MainFragment()
+    companion object {
+        fun newInstance() = MainFragment()
     }
 
 }

@@ -11,19 +11,21 @@ import ru.geeekbrains.princeschdailypicture.repository.PODRetrofitImpl
 import ru.geeekbrains.princeschdailypicture.repository.PODServerResponseData
 import ru.geeekbrains.princeschdailypicture.repository.PictureOfTheDayData
 
-class MainViewModel (private val liveDataToObserve: MutableLiveData<PictureOfTheDayData> = MutableLiveData(),
-                     private val retrofitImpl: PODRetrofitImpl = PODRetrofitImpl()): ViewModel() {
+class MainViewModel(
+    private val liveDataToObserve: MutableLiveData<PictureOfTheDayData> = MutableLiveData(),
+    private val retrofitImpl: PODRetrofitImpl = PODRetrofitImpl()
+) : ViewModel() {
 
     fun getLiveData(): LiveData<PictureOfTheDayData> {
         return liveDataToObserve
     }
 
-    fun sendServerRequest(){
+    fun sendServerRequest() {
         liveDataToObserve.postValue(PictureOfTheDayData.Loading)
         val apiKey = BuildConfig.NASA_API_KEY
-        if(apiKey.isBlank()){
+        if (apiKey.isBlank()) {
             PictureOfTheDayData.Error(Throwable("You need API key"))
-        }else{
+        } else {
             retrofitImpl.getRetrofitImpl().getPictureOfTheDay(apiKey).enqueue(
                 object : Callback<PODServerResponseData> {
                     override fun onResponse(
