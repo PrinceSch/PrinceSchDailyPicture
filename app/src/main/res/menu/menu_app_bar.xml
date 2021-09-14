@@ -9,7 +9,7 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/app_bar_search"
+        android:id="@+id/app_bar_settings"
         android:icon="@drawable/ic_settings_menu"
         android:title="@string/settings"
         app:showAsAction="ifRoom" />
