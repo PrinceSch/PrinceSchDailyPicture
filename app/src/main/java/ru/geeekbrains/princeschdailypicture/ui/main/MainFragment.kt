@@ -31,6 +31,8 @@ class MainFragment : Fragment() {
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
+    private var isMain = true
+    private var isHD = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,8 +43,6 @@ class MainFragment : Fragment() {
         setActionBar()
         return binding.root
     }
-
-    private var isMain = true
 
     private fun setActionBar() {
         (context as MainActivity).setSupportActionBar(binding.bottomAppBar)
@@ -99,6 +99,15 @@ class MainFragment : Fragment() {
                     Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
             })
         }
+
+        with(binding) {
+            chipHd.setOnClickListener {
+                isHD = !isHD
+                viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
+                viewModel.sendServerRequest()
+            }
+        }
+
     }
 
     private fun renderData(data: PictureOfTheDayData) {
@@ -117,8 +126,14 @@ class MainFragment : Fragment() {
                             data.serverResponseData.title
                         includeLayout.bottomSheetDescription.text =
                             data.serverResponseData.explanation
-                        imageView.load(data.serverResponseData.url) {
-                            error(R.drawable.ic_no_photo_vector)
+                        if (isHD) {
+                            imageView.load(data.serverResponseData.hdurl) {
+                                error(R.drawable.ic_no_photo_vector)
+                            }
+                        } else {
+                            imageView.load(data.serverResponseData.url) {
+                                error(R.drawable.ic_no_photo_vector)
+                            }
                         }
                     }
                 }
@@ -140,7 +155,7 @@ class MainFragment : Fragment() {
             R.id.app_bar_settings -> {
                 requireActivity().supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.container,ChipsFragment.newInstance())
+                    .replace(R.id.container, ChipsFragment.newInstance())
                     .addToBackStack("")
                     .commit()
             }

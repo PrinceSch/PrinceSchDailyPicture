@@ -5,4 +5,7 @@
     <string name="wiki_helper_text">Look for something new</string>
     <string name="favourite">Favourite</string>
     <string name="settings">settings</string>
+    <string name="hd">HD</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="today">Today</string>
 </resources>
