@@ -91,7 +91,7 @@ class MainFragment : Fragment() {
         viewModel.sendServerRequest()
 
         bottomSheetBehavior = BottomSheetBehavior.from(binding.includeLayout.bottomSheetContainer)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
 
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
@@ -139,7 +139,7 @@ class MainFragment : Fragment() {
                 }
             }
             is AppState.Loading -> {
-                //binding.loadingLayout.show()
+                binding.loadingLayout.show()
             }
             is AppState.Error -> {
                 with(binding) {
