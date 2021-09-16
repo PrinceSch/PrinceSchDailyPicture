@@ -7,11 +7,23 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="loadingBackground">#363636</color>
+    <color name="mainBackground">#363636</color>
     <color name="colorPrimary">#400F87</color>
 
     <color name="textColor">#FFAA9BB8</color>
     <color name="mainFragmentBoxStroke">#FF4E22B3</color>
     <color name="mainFragmentBoxBackground">#258F8F8F</color>
     <color name="mainFragmentHelperText">#CC8F8F8F</color>
+
+    <color name="primaryMars">#b71c1c</color>
+    <color name="lightMars">#f05545</color>
+    <color name="darkMars">#7f0000</color>
+    <color name="secondMars">#aed581</color>
+    <color name="secondDarkMars">#7da453</color>
+
+    <color name="primaryVenus">#ffa726</color>
+    <color name="lightVenus">#ffd95b</color>
+    <color name="darkVenus">#c77800</color>
+    <color name="secondVenus">#1a237e</color>
+    <color name="secondDarkVenus">#000051</color>
 </resources>

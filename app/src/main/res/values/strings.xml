@@ -4,7 +4,7 @@
     <string name="search_in_wiki">Search in Wikipedia</string>
     <string name="wiki_helper_text">Look for something new</string>
     <string name="favourite">Favourite</string>
-    <string name="settings">settings</string>
+    <string name="settings">Settings</string>
     <string name="hd">HD</string>
     <string name="yesterday">Yesterday</string>
     <string name="today">Today</string>
@@ -20,4 +20,7 @@
     <string name="choice_a_chip">Choice A</string>
     <string name="choice_b_chip">Choice B</string>
     <string name="choice_c_chip">Choice C</string>
+    <string name="set_main_theme">Set main Theme</string>
+    <string name="set_marsian_theme">Set Marsian Theme</string>
+    <string name="set_venerain_theme">Set Venerain Theme</string>
 </resources>

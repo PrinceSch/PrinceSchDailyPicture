@@ -1,4 +1,4 @@
-package ru.geeekbrains.princeschdailypicture.ui.main
+package ru.geeekbrains.princeschdailypicture.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,29 +1,65 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.PrinceSchDailyPicture" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="MainTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_200</item>
         <item name="colorPrimaryVariant">@color/purple_500</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="colorOnSecondary">@color/white</item>
         <!-- Customize your theme here. -->
-        <item name="textInputStyle">@style/MyOutlinedBox</item>
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.MyOutlinedBox</item>
+        <item name="fontFamily">@font/alice</item>
+        <item name="android:fontFamily">@font/alice</item>
+        <item name="bottomAppBarStyle">@style/Widget.MaterialComponents.BottomAppBar.MyBottomAppBar</item>
+        <item name="android:background">@color/mainBackground</item>
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button.MyButton</item>
+        <item name="android:textColor">@color/textColor</item>
     </style>
 
-    <style name="MyOutlinedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="MarsTheme" parent="MainTheme">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryMars</item>
+        <item name="colorPrimaryVariant">@color/lightMars</item>
+        <item name="colorPrimaryDark">@color/darkMars</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondMars</item>
+        <item name="colorSecondaryVariant">@color/secondDarkMars</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/darkMars</item>
+    </style>
+
+    <style name="VenusTheme" parent="MainTheme">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryVenus</item>
+        <item name="colorPrimaryVariant">@color/lightVenus</item>
+        <item name="colorPrimaryDark">@color/darkVenus</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondVenus</item>
+        <item name="colorSecondaryVariant">@color/secondDarkVenus</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/darkVenus</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox.MyOutlinedBox">
         <item name="android:textColorHint">@color/textColor</item>
-        <item name="boxStrokeColor">@color/mainFragmentBoxStroke</item>
+        <item name="boxStrokeColor">?attr/colorPrimary</item>
         <item name="boxBackgroundColor">@color/mainFragmentBoxBackground</item>
         <item name="endIconTint">@color/textColor</item>
         <item name="helperTextTextColor">@color/mainFragmentHelperText</item>
+        <item name="fontFamily">@font/cinzel_decorative_black</item>
     </style>
 
-    <style name="MyTextInputEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="Widget.MaterialComponents.BottomAppBar.MyBottomAppBar">
+        <item name="backgroundTint">?colorPrimary</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.MyButton">
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+        <item name="cornerRadius">@dimen/buttonCornerSize</item>
+        <item name="android:padding">@dimen/def_padding</item>
         <item name="android:textColor">@color/textColor</item>
     </style>
 </resources>
