@@ -9,22 +9,22 @@ import retrofit2.Response
 import ru.geeekbrains.princeschdailypicture.BuildConfig
 import ru.geeekbrains.princeschdailypicture.repository.PODRetrofitImpl
 import ru.geeekbrains.princeschdailypicture.repository.PODServerResponseData
-import ru.geeekbrains.princeschdailypicture.repository.PictureOfTheDayData
+import ru.geeekbrains.princeschdailypicture.repository.AppState
 
 class MainViewModel(
-    private val liveDataToObserve: MutableLiveData<PictureOfTheDayData> = MutableLiveData(),
+    private val liveDataToObserve: MutableLiveData<AppState> = MutableLiveData(),
     private val retrofitImpl: PODRetrofitImpl = PODRetrofitImpl()
 ) : ViewModel() {
 
-    fun getLiveData(): LiveData<PictureOfTheDayData> {
+    fun getLiveData(): LiveData<AppState> {
         return liveDataToObserve
     }
 
     fun sendServerRequest() {
-        liveDataToObserve.postValue(PictureOfTheDayData.Loading)
+        liveDataToObserve.postValue(AppState.Loading)
         val apiKey = BuildConfig.NASA_API_KEY
         if (apiKey.isBlank()) {
-            PictureOfTheDayData.Error(Throwable("You need API key"))
+            AppState.Error(Throwable("You need API key"))
         } else {
             retrofitImpl.getRetrofitImpl().getPictureOfTheDay(apiKey).enqueue(
                 object : Callback<PODServerResponseData> {
@@ -33,18 +33,18 @@ class MainViewModel(
                         response: Response<PODServerResponseData>
                     ) {
                         if (response.isSuccessful && response.body() != null) {
-                            liveDataToObserve.postValue(PictureOfTheDayData.Success(response.body() as PODServerResponseData))
+                            liveDataToObserve.postValue(AppState.Success(response.body() as PODServerResponseData))
                         } else {
                             val message = response.message()
                             if (message.isNullOrEmpty()) {
                                 liveDataToObserve.value =
-                                    PictureOfTheDayData.Error(Throwable("Unidentified error"))
+                                    AppState.Error(Throwable("Unidentified error"))
                             }
                         }
                     }
 
                     override fun onFailure(call: Call<PODServerResponseData>, t: Throwable) {
-                        liveDataToObserve.value = PictureOfTheDayData.Error(t)
+                        liveDataToObserve.value = AppState.Error(t)
                     }
 
                 }

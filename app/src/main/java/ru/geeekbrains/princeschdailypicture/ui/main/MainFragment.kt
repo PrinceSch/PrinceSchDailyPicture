@@ -15,7 +15,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import ru.geeekbrains.princeschdailypicture.MainActivity
 import ru.geeekbrains.princeschdailypicture.R
 import ru.geeekbrains.princeschdailypicture.databinding.FragmentMainBinding
-import ru.geeekbrains.princeschdailypicture.repository.PictureOfTheDayData
+import ru.geeekbrains.princeschdailypicture.repository.AppState
 
 class MainFragment : Fragment() {
 
@@ -110,14 +110,14 @@ class MainFragment : Fragment() {
 
     }
 
-    private fun renderData(data: PictureOfTheDayData) {
+    private fun renderData(data: AppState) {
         when (data) {
-            is PictureOfTheDayData.Success -> {
+            is AppState.Success -> {
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
                 if (url.isNullOrEmpty()) {
                     with(binding) {
-                        main.showMessage("URL is null or empty")
+                        main.showMessage(getString(R.string.url_null_or_empty))
                     }
                 } else {
                     with(binding) {
@@ -138,10 +138,10 @@ class MainFragment : Fragment() {
                     }
                 }
             }
-            is PictureOfTheDayData.Loading -> {
-                binding.loadingLayout.show()
+            is AppState.Loading -> {
+                //binding.loadingLayout.show()
             }
-            is PictureOfTheDayData.Error -> {
+            is AppState.Error -> {
                 with(binding) {
                     main.showMessage(data.toString())
                 }
@@ -151,7 +151,7 @@ class MainFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT).show()
+            R.id.app_bar_fav -> Toast.makeText(context, getString(R.string.favourite), Toast.LENGTH_SHORT).show()
             R.id.app_bar_settings -> {
                 requireActivity().supportFragmentManager
                     .beginTransaction()

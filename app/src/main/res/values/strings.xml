@@ -8,4 +8,16 @@
     <string name="hd">HD</string>
     <string name="yesterday">Yesterday</string>
     <string name="today">Today</string>
+    <string name="url_null_or_empty">URL is null or empty</string>
+    <string name="default_chip">Default</string>
+    <string name="entry_chip">Entry</string>
+    <string name="choice_chip">Choice</string>
+    <string name="action_chip">Action</string>
+    <string name="filter_chip">Filter</string>
+    <string name="background_color_chip">Background Color</string>
+    <string name="ripple_color_chip">Ripple Color</string>
+    <string name="chip_icon_chip">Chip icon</string>
+    <string name="choice_a_chip">Choice A</string>
+    <string name="choice_b_chip">Choice B</string>
+    <string name="choice_c_chip">Choice C</string>
 </resources>

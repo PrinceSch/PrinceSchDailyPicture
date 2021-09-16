@@ -20,8 +20,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout"
-                style="@style/MineOutlinedBox"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/null_dimen"
                 android:layout_height="wrap_content"
                 android:hint="@string/search_in_wiki"
                 app:endIconCheckable="true"
@@ -37,6 +36,7 @@
                     android:id="@+id/input_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    style="@style/MyTextInputEditText"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -95,7 +95,7 @@
         android:backgroundTint="@color/teal_700"
         app:layout_anchor="@id/bottom_app_bar"
         app:srcCompat="@drawable/ic_plus_fab"
-        app:tint="#FFFFFF" />
+        app:tint="@color/white" />
 
     <FrameLayout
         android:id="@+id/loadingLayout"

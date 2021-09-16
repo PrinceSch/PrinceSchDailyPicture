@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.PrinceSchDailyPicture" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#400F87</item>
-        <item name="colorPrimaryVariant">#4E22B3</item>
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_500</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -12,13 +12,18 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="textInputStyle">@style/MyOutlinedBox</item>
     </style>
 
-    <style name="MineOutlinedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="android:textColorHint">#FFAA9BB8</item>
-        <item name="boxStrokeColor">#FF4E22B3</item>
-        <item name="boxBackgroundColor">#258F8F8F</item>
-        <item name="endIconTint">#FFAA9BB8</item>
-        <item name="helperTextTextColor">#CC8F8F8F</item>
+    <style name="MyOutlinedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/textColor</item>
+        <item name="boxStrokeColor">@color/mainFragmentBoxStroke</item>
+        <item name="boxBackgroundColor">@color/mainFragmentBoxBackground</item>
+        <item name="endIconTint">@color/textColor</item>
+        <item name="helperTextTextColor">@color/mainFragmentHelperText</item>
+    </style>
+
+    <style name="MyTextInputEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColor">@color/textColor</item>
     </style>
 </resources>

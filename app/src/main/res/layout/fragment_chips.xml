@@ -13,32 +13,32 @@
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Default" />
+            android:text="@string/default_chip" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipWithClose"
             style="@style/Widget.MaterialComponents.Chip.Entry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Entry" />
+            android:text="@string/entry_chip" />
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choice" />
+            android:text="@string/choice_chip" />
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Action"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Action" />
+            android:text="@string/action_chip" />
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Filter" />
+            android:text="@string/filter_chip" />
     </LinearLayout>
 
     <LinearLayout
@@ -50,20 +50,20 @@
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Background Color"
+            android:text="@string/background_color_chip"
             app:chipBackgroundColor="@android:color/holo_blue_bright" />
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ripple Color"
+            android:text="@string/ripple_color_chip"
             app:rippleColor="@android:color/holo_orange_dark" />
 
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chip icon"
+            android:text="@string/chip_icon_chip"
             app:chipIcon="@drawable/ic_archive"
             app:iconStartPadding="10dp" />
     </LinearLayout>
@@ -83,37 +83,37 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Choice A" />
+                android:text="@string/choice_a_chip" />
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Choice B" />
+                android:text="@string/choice_b_chip" />
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Choice C" />
+                android:text="@string/choice_c_chip" />
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Choice A" />
+                android:text="@string/choice_a_chip"  />
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Choice B" />
+                android:text="@string/choice_b_chip"/>
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Choice C" />
+                android:text="@string/choice_c_chip" />
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>
 

@@ -18,7 +18,7 @@ class ChipsFragment: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _bindong =  FragmentChipsBinding.inflate(inflater)
         return  binding.root
     }
