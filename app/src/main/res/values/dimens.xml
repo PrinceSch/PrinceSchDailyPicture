@@ -3,6 +3,6 @@
     <dimen name="def_padding">16dp</dimen>
     <dimen name="null_dimen">0dp</dimen>
     <dimen name="space_height">70dp</dimen>
-    <dimen name="buttonTextSize">40sp</dimen>
+    <dimen name="buttonTextSize">30sp</dimen>
     <dimen name="buttonCornerSize">40dp</dimen>
 </resources>

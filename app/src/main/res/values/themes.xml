@@ -14,7 +14,7 @@
         <item name="fontFamily">@font/alice</item>
         <item name="android:fontFamily">@font/alice</item>
         <item name="bottomAppBarStyle">@style/Widget.MaterialComponents.BottomAppBar.MyBottomAppBar</item>
-        <item name="android:background">@color/mainBackground</item>
+        <item name="android:colorBackground">@color/mainBackground</item>
         <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button.MyButton</item>
         <item name="android:textColor">@color/textColor</item>
     </style>
