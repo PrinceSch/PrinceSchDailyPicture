@@ -62,4 +62,5 @@
         <item name="android:padding">@dimen/def_padding</item>
         <item name="android:textColor">@color/textColor</item>
     </style>
+
 </resources>

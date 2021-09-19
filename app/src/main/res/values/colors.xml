@@ -26,4 +26,5 @@
     <color name="darkVenus">#c77800</color>
     <color name="secondVenus">#1a237e</color>
     <color name="secondDarkVenus">#000051</color>
+    <color name="halfOpacityBlack">#99000000</color>
 </resources>
