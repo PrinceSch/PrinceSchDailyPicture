@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:background="@color/textColor"
         android:datePickerMode="spinner"
+        android:calendarViewShown="false"
         app:layout_constraintBottom_toTopOf="@id/marsRoverImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,4 +1,4 @@
-package ru.geeekbrains.princeschdailypicture.repository
+package ru.geeekbrains.princeschdailypicture.data.PODrepository
 
 import com.google.gson.annotations.SerializedName
 

@@ -13,7 +13,7 @@ import com.google.android.material.bottomappbar.BottomAppBar
 import ru.geeekbrains.princeschdailypicture.MainActivity
 import ru.geeekbrains.princeschdailypicture.R
 import ru.geeekbrains.princeschdailypicture.databinding.FragmentMainBinding
-import ru.geeekbrains.princeschdailypicture.repository.AppState
+import ru.geeekbrains.princeschdailypicture.data.AppState
 import ru.geeekbrains.princeschdailypicture.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
@@ -107,8 +107,8 @@ class MainFragment : Fragment() {
     private fun renderData(data: AppState) {
         when (data) {
             is AppState.Success -> {
-                val serverResponseData = data.serverResponseData
-                val url = serverResponseData.url
+                val serverResponseData = data.serverResponseDataPOD
+                val url = serverResponseData?.url
                 if (url.isNullOrEmpty()) {
                     with(binding) {
                         main.showMessage(getString(R.string.url_null_or_empty))
@@ -117,15 +117,15 @@ class MainFragment : Fragment() {
                     with(binding) {
                         loadingLayout.hide()
                         descriptionHeader.text =
-                            data.serverResponseData.title
+                            data.serverResponseDataPOD.title
                         description.text =
-                            data.serverResponseData.explanation
+                            data.serverResponseDataPOD.explanation
                         if (isHD) {
-                            imageView.load(data.serverResponseData.hdurl) {
+                            imageView.load(data.serverResponseDataPOD.hdurl) {
                                 error(R.drawable.ic_no_photo_vector)
                             }
                         } else {
-                            imageView.load(data.serverResponseData.url) {
+                            imageView.load(data.serverResponseDataPOD.url) {
                                 error(R.drawable.ic_no_photo_vector)
                             }
                         }

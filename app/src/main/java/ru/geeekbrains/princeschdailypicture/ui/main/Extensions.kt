@@ -17,6 +17,6 @@ fun View.hide(): View {
     return this
 }
 
-fun View.showMessage(text: String, length: Int = Snackbar.LENGTH_INDEFINITE) {
+fun View.showMessage(text: String, length: Int = Snackbar.LENGTH_LONG) {
     Snackbar.make(this, text, length).show()
 }

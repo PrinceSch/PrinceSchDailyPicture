@@ -1,4 +1,4 @@
-package ru.geeekbrains.princeschdailypicture.repository
+package ru.geeekbrains.princeschdailypicture.data.PODrepository
 
 import retrofit2.Call
 import retrofit2.http.GET
