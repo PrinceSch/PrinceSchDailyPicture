@@ -24,20 +24,20 @@ class EpicViewModel(
         retrofitImpl.getEpicAPI(date, callBack)
     }
 
-    private val callBack = object : Callback<EpicServerResponseData>{
+    private val callBack = object : Callback<List<EpicServerResponseData>>{
         override fun onResponse(
-            call: Call<EpicServerResponseData>,
-            response: Response<EpicServerResponseData>
+            call: Call<List<EpicServerResponseData>>,
+            response: Response<List<EpicServerResponseData>>
         ) {
-            val serverResponse: EpicServerResponseData? = response.body()
+            val serverResponse: List<EpicServerResponseData>? = response.body()
             if (response.isSuccessful && serverResponse != null) {
-                liveDataToObserve.postValue(AppState.Success(null, response.body() as EpicServerResponseData))
+                liveDataToObserve.postValue(AppState.SuccessEPIC(response.body() as List<EpicServerResponseData>))
             } else {
                 liveDataToObserve.postValue(AppState.Error(Throwable("response error")))
             }
         }
 
-        override fun onFailure(call: Call<EpicServerResponseData>, t: Throwable) {
+        override fun onFailure(call: Call<List<EpicServerResponseData>>, t: Throwable) {
             liveDataToObserve.postValue(AppState.Error(Throwable(t.message)))
         }
     }

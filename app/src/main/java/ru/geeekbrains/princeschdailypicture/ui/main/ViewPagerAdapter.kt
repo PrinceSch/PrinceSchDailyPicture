@@ -11,7 +11,7 @@ private const val MARSROVER_FRAGMENT = 3
 
 class ViewPagerAdapter(private val fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
 
-    private val fragments = arrayOf(MainFragment(), EpicFragment(), InsightFragment(), MarsRoverFragment())
+    private val fragments = arrayOf(MainFragment(), EpicFragment(), MarsRoverFragment())
 
     override fun getCount(): Int {
         return fragments.size

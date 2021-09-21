@@ -50,9 +50,9 @@ class EpicFragment : Fragment() {
                 }
             }
 
-            is AppState.Success -> {
-                val serverResponseData = data.serverResponseDataEPIC
-                val image = serverResponseData?.image
+            is AppState.SuccessEPIC -> {
+                val serverResponseData = data.serverResponseDataEPIC[0]
+                val image = serverResponseData.image
                 if (image.isNullOrEmpty()){
                     with(binding) {
                         rootEpicFragment.showMessage(getString(R.string.url_null_or_empty))

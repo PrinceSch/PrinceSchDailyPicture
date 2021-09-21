@@ -15,9 +15,7 @@ class EPICRetrofitImpl {
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
         .build().create(EPICapi::class.java)
 
-    fun getEpicAPI(date: String, callback: Callback<EpicServerResponseData>){
+    fun getEpicAPI(date: String, callback: Callback<List<EpicServerResponseData>>){
         epicAPI.getEpicData(date, BuildConfig.NASA_API_KEY).enqueue(callback)
     }
-
-
 }

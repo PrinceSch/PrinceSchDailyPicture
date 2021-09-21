@@ -33,7 +33,7 @@ class MainViewModel(
                         response: Response<PODServerResponseData>
                     ) {
                         if (response.isSuccessful && response.body() != null) {
-                            liveDataToObserve.postValue(AppState.Success(response.body() as PODServerResponseData, null))
+                            liveDataToObserve.postValue(AppState.SuccessPOD(response.body() as PODServerResponseData))
                         } else {
                             val message = response.message()
                             if (message.isNullOrEmpty()) {

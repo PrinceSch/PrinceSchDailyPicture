@@ -106,8 +106,8 @@ class MainFragment : Fragment() {
 
     private fun renderData(data: AppState) {
         when (data) {
-            is AppState.Success -> {
-                val serverResponseData = data.serverResponseDataPOD
+            is AppState.SuccessPOD -> {
+                val serverResponseData = data.serverResponseData
                 val url = serverResponseData?.url
                 if (url.isNullOrEmpty()) {
                     with(binding) {
@@ -117,15 +117,15 @@ class MainFragment : Fragment() {
                     with(binding) {
                         loadingLayout.hide()
                         descriptionHeader.text =
-                            data.serverResponseDataPOD.title
+                            data.serverResponseData.title
                         description.text =
-                            data.serverResponseDataPOD.explanation
+                            data.serverResponseData.explanation
                         if (isHD) {
-                            imageView.load(data.serverResponseDataPOD.hdurl) {
+                            imageView.load(data.serverResponseData.hdurl) {
                                 error(R.drawable.ic_no_photo_vector)
                             }
                         } else {
-                            imageView.load(data.serverResponseDataPOD.url) {
+                            imageView.load(data.serverResponseData.url) {
                                 error(R.drawable.ic_no_photo_vector)
                             }
                         }

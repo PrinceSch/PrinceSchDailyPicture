@@ -12,6 +12,6 @@ interface EPICapi {
     fun getEpicData(
         @Path("date") date: String,
         @Query("api_key") apiKey: String
-    ): Call<EpicServerResponseData>
+    ): Call<List<EpicServerResponseData>>
 
 }
