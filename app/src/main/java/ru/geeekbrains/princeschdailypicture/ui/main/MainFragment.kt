@@ -5,15 +5,15 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.api.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import ru.geeekbrains.princeschdailypicture.MainActivity
 import ru.geeekbrains.princeschdailypicture.R
-import ru.geeekbrains.princeschdailypicture.databinding.FragmentMainBinding
 import ru.geeekbrains.princeschdailypicture.data.AppState
+import ru.geeekbrains.princeschdailypicture.databinding.FragmentMainBinding
 import ru.geeekbrains.princeschdailypicture.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
@@ -115,7 +115,7 @@ class MainFragment : Fragment() {
                     }
                 } else {
                     with(binding) {
-                        loadingLayout.hide()
+                        loadingLayout.loadingLayout.hide()
                         descriptionHeader.text =
                             data.serverResponseData.title
                         description.text =
@@ -133,7 +133,7 @@ class MainFragment : Fragment() {
                 }
             }
             is AppState.Loading -> {
-                binding.loadingLayout.show()
+                binding.loadingLayout.loadingLayout.show()
             }
             is AppState.Error -> {
                 with(binding) {
@@ -145,7 +145,11 @@ class MainFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> Toast.makeText(context, getString(R.string.favourite), Toast.LENGTH_SHORT).show()
+            R.id.app_bar_fav -> Toast.makeText(
+                context,
+                getString(R.string.favourite),
+                Toast.LENGTH_SHORT
+            ).show()
             R.id.app_bar_settings -> {
                 requireActivity().supportFragmentManager
                     .beginTransaction()

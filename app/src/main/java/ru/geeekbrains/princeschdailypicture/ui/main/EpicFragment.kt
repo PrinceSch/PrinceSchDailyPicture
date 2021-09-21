@@ -15,7 +15,7 @@ import ru.geeekbrains.princeschdailypicture.viewmodel.EpicViewModel
 class EpicFragment : Fragment() {
 
     private var _binding: FragmentEpicBinding? = null
-    val binding: FragmentEpicBinding
+    private val binding: FragmentEpicBinding
         get() {
             return _binding!!
         }
@@ -23,6 +23,9 @@ class EpicFragment : Fragment() {
     private val viewModel: EpicViewModel by lazy {
         ViewModelProvider(this).get(EpicViewModel::class.java)
     }
+
+    private var dateForAPI: String? = null
+    private var dateForImage: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,14 +38,31 @@ class EpicFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getLiveData().observe(viewLifecycleOwner, {renderData(it)})
-        viewModel.getEpicDataFromServer("2021-09-17")
+
+        with(binding){
+            epicButton.setOnClickListener {
+                val day = epicDatePicker.dayOfMonth
+                val month = epicDatePicker.month+1
+                val year = epicDatePicker.year
+
+                if (month < 10) {
+                    dateForAPI = "${year}-0${month}-${day}"
+                    dateForImage = "${year}/0${month}/${day}"
+                } else {
+                    dateForAPI = "${year}-${month}-${day}"
+                    dateForImage = "${year}/${month}/${day}"
+                }
+
+                viewModel.getEpicDataFromServer(dateForAPI!!)
+            }
+        }
     }
 
     private fun renderData(data: AppState) {
         when (data){
 
             is AppState.Loading -> {
-                binding.loadingLayout.show()
+                binding.loadingLayout.loadingLayout.show()
             }
             is AppState.Error -> {
                 with(binding) {
@@ -52,6 +72,7 @@ class EpicFragment : Fragment() {
 
             is AppState.SuccessEPIC -> {
                 val serverResponseData = data.serverResponseDataEPIC[0]
+                //TODO обработать все элементы массива
                 val image = serverResponseData.image
                 if (image.isNullOrEmpty()){
                     with(binding) {
@@ -59,9 +80,8 @@ class EpicFragment : Fragment() {
                     }
                 } else {
                     with(binding){
-                        loadingLayout.hide()
-                        epicDatePicker.updateDate(2021,9,17)
-                        epicImageView.load("https://epic.gsfc.nasa.gov/archive/natural/2021/09/17/jpg/${serverResponseData.image}.jpg"){
+                        loadingLayout.loadingLayout.hide()
+                        epicImageView.load("https://epic.gsfc.nasa.gov/archive/natural/${dateForImage}/jpg/${serverResponseData.image}.jpg"){
                             error(R.drawable.ic_no_photo_vector)
                         }
                     }
@@ -73,10 +93,6 @@ class EpicFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
-    }
-
-    companion object {
-        fun newInstance() = EpicFragment()
     }
 
 }

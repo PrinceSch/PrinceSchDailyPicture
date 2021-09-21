@@ -24,6 +24,8 @@ class MarsRoverFragment : Fragment() {
         ViewModelProvider(this).get(MarsRoverViewModel::class.java)
     }
 
+    private var dateForAPI: String? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,14 +37,29 @@ class MarsRoverFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getLiveData().observe(viewLifecycleOwner, {renderData(it)})
-        viewModel.getMarsRoverPhotosFromServer("2021-09-17")
+
+        with(binding){
+            marsButton.setOnClickListener {
+                val day = marsRoverDatePicker.dayOfMonth
+                val month = marsRoverDatePicker.month+1
+                val year = marsRoverDatePicker.year
+
+                dateForAPI = if (month < 10) {
+                    "${year}-0${month}-${day}"
+                } else {
+                    "${year}-${month}-${day}"
+                }
+                viewModel.getMarsRoverPhotosFromServer(dateForAPI!!)
+            }
+        }
+
     }
 
     private fun renderData(data: AppState) {
 
         when(data){
             is AppState.Loading -> {
-                binding.loadingLayout.show()
+                binding.loadingLayout.loadingLayout.show()
             }
             is AppState.Error -> {
                 with(binding) {
@@ -52,14 +69,14 @@ class MarsRoverFragment : Fragment() {
             is AppState.SuccessMarsRover -> {
                 val serverResponseData = data.serverResponseDataMR.photos
                 val image = serverResponseData[0].imgSrc
+                //TODO обработать все элементы массива. доработать разные камеры, чтоб не падало при отсутвии фото с curiosity в выбранный день
                 if (image.isNullOrEmpty()) {
                     with(binding) {
                         rootMarsFragment.showMessage(getString(R.string.url_null_or_empty))
                     }
                 } else {
                     with(binding){
-                        loadingLayout.hide()
-                        marsRoverDatePicker.updateDate(2021,9,17)
+                        loadingLayout.loadingLayout.hide()
                         marsRoverImageView.load(image){
                             error(R.drawable.ic_no_photo_vector)
                         }
@@ -73,10 +90,6 @@ class MarsRoverFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
-    }
-
-    companion object {
-        fun newInstance() = MarsRoverFragment()
     }
 
 }
