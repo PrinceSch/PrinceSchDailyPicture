@@ -28,24 +28,7 @@ class SettingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSettingsBinding.inflate(inflater)
-        setActionBar()
         return binding.root
-    }
-
-    private fun setActionBar() {
-        (context as MainActivity).setSupportActionBar(binding.bottomAppBar)
-        setHasOptionsMenu(true)
-        with(binding) {
-            fab.setImageDrawable(
-                ContextCompat.getDrawable(
-                    requireContext(),
-                    R.drawable.ic_back_fab
-                )
-            )
-            fab.setOnClickListener {
-                activity?.supportFragmentManager?.popBackStack()
-            }
-        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,6 +39,7 @@ class SettingsFragment : Fragment() {
                 activity?.let {
                     it as MainActivity
                     THEME_ID = R.style.MainTheme
+                    it.supportFragmentManager.popBackStack()
                     it.recreate()
                 }
             }
@@ -64,6 +48,7 @@ class SettingsFragment : Fragment() {
                 activity?.let {
                     it as MainActivity
                     THEME_ID = R.style.MarsTheme
+                    it.supportFragmentManager.popBackStack()
                     it.recreate()
                 }
             }
@@ -72,6 +57,7 @@ class SettingsFragment : Fragment() {
                 activity?.let {
                     it as MainActivity
                     THEME_ID = R.style.VenusTheme
+                    it.supportFragmentManager.popBackStack()
                     it.recreate()
                 }
             }
