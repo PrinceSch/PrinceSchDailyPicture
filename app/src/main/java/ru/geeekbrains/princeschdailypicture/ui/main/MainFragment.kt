@@ -108,29 +108,13 @@ class MainFragment : Fragment() {
         when (data) {
             is AppState.SuccessPOD -> {
                 val serverResponseData = data.serverResponseData
-                val url = serverResponseData?.url
-                if (url.isNullOrEmpty()) {
+                val url = serverResponseData.url
+                val hdurl = serverResponseData.hdurl
+                if (url.isNullOrEmpty() && hdurl.isNullOrEmpty()) {
                     with(binding) {
                         main.showMessage(getString(R.string.url_null_or_empty))
                     }
-                } else {
-                    with(binding) {
-                        loadingLayout.loadingLayout.hide()
-                        descriptionHeader.text =
-                            data.serverResponseData.title
-                        description.text =
-                            data.serverResponseData.explanation
-                        if (isHD) {
-                            imageView.load(data.serverResponseData.hdurl) {
-                                error(R.drawable.ic_no_photo_vector)
-                            }
-                        } else {
-                            imageView.load(data.serverResponseData.url) {
-                                error(R.drawable.ic_no_photo_vector)
-                            }
-                        }
-                    }
-                }
+                } else setData(data)
             }
             is AppState.Loading -> {
                 binding.loadingLayout.loadingLayout.show()
@@ -138,6 +122,40 @@ class MainFragment : Fragment() {
             is AppState.Error -> {
                 with(binding) {
                     main.showMessage(data.toString())
+                }
+            }
+        }
+    }
+
+    private fun setData(dataPOD: AppState.SuccessPOD){
+        val url = dataPOD.serverResponseData.url
+        val hdurl = dataPOD.serverResponseData.hdurl
+        if (!url.isNullOrEmpty() && hdurl.isNullOrEmpty()){
+            with(binding){
+                imageView.hide()
+                videoURL.show()
+                videoURL.text = getString(R.string.dailyVideo)
+                videoURL.setOnClickListener {
+                    startActivity(Intent(Intent.ACTION_VIEW).apply {
+                        data = Uri.parse(url)
+                    })
+                }
+            }
+        } else {
+            with(binding) {
+                loadingLayout.loadingLayout.hide()
+                descriptionHeader.text =
+                    dataPOD.serverResponseData.title
+                description.text =
+                    dataPOD.serverResponseData.explanation
+                if (isHD) {
+                    imageView.load(hdurl) {
+                        error(R.drawable.ic_no_photo_vector)
+                    }
+                } else {
+                    imageView.load(url) {
+                        error(R.drawable.ic_no_photo_vector)
+                    }
                 }
             }
         }

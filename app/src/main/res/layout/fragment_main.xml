@@ -56,10 +56,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/photo_of_the_day_stub"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/chip_hd" />
+                app:layout_constraintTop_toBottomOf="@id/chip_hd"
+                app:layout_constraintBottom_toTopOf="@id/description_header"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/videoURL"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/image_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/description_header"/>
 
             <TextView
                 android:id="@+id/description_header"
@@ -69,7 +79,8 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view" />
+                app:layout_constraintTop_toBottomOf="@id/videoURL"
+                app:layout_constraintBottom_toTopOf="@id/description"/>
 
             <TextView
                 android:id="@+id/description"

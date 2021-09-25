@@ -31,18 +31,18 @@ class EpicFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding =  FragmentEpicBinding.inflate(inflater)
-        return  binding.root
+        _binding = FragmentEpicBinding.inflate(inflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getLiveData().observe(viewLifecycleOwner, {renderData(it)})
+        viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
 
-        with(binding){
+        with(binding) {
             epicButton.setOnClickListener {
                 val day = epicDatePicker.dayOfMonth
-                val month = epicDatePicker.month+1
+                val month = epicDatePicker.month + 1
                 val year = epicDatePicker.year
 
                 if (month < 10) {
@@ -59,8 +59,7 @@ class EpicFragment : Fragment() {
     }
 
     private fun renderData(data: AppState) {
-        when (data){
-
+        when (data) {
             is AppState.Loading -> {
                 binding.loadingLayout.loadingLayout.show()
             }
@@ -69,20 +68,26 @@ class EpicFragment : Fragment() {
                     rootEpicFragment.showMessage(data.error.toString())
                 }
             }
-
             is AppState.SuccessEPIC -> {
-                val serverResponseData = data.serverResponseDataEPIC[0]
-                //TODO обработать все элементы массива
-                val image = serverResponseData.image
-                if (image.isNullOrEmpty()){
-                    with(binding) {
-                        rootEpicFragment.showMessage(getString(R.string.url_null_or_empty))
+                if (data.serverResponseDataEPIC.isEmpty()) {
+                    with(binding){
+                        rootEpicFragment.showMessage(getString(R.string.empty_array))
+                        loadingLayout.loadingLayout.hide()
                     }
                 } else {
-                    with(binding){
-                        loadingLayout.loadingLayout.hide()
-                        epicImageView.load("https://epic.gsfc.nasa.gov/archive/natural/${dateForImage}/jpg/${serverResponseData.image}.jpg"){
-                            error(R.drawable.ic_no_photo_vector)
+                    val serverResponseData = data.serverResponseDataEPIC[0]
+                    //TODO обработать все элементы массива
+                    val image = serverResponseData.image
+                    if (image.isNullOrEmpty()) {
+                        with(binding) {
+                            rootEpicFragment.showMessage(getString(R.string.url_null_or_empty))
+                        }
+                    } else {
+                        with(binding) {
+                            loadingLayout.loadingLayout.hide()
+                            epicImageView.load("https://epic.gsfc.nasa.gov/archive/natural/${dateForImage}/jpg/${serverResponseData.image}.jpg") {
+                                error(R.drawable.ic_no_photo_vector)
+                            }
                         }
                     }
                 }

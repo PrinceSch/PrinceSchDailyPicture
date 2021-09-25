@@ -10,6 +10,8 @@ android {
         viewBinding true
     }
 
+    buildToolsVersion "30.0.0"
+
     defaultConfig {
         applicationId "ru.geeekbrains.princeschdailypicture"
         minSdkVersion 26
