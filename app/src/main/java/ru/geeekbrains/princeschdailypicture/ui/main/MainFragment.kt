@@ -6,16 +6,15 @@ import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import coil.api.load
 import com.google.android.material.bottomappbar.BottomAppBar
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import ru.geeekbrains.princeschdailypicture.MainActivity
 import ru.geeekbrains.princeschdailypicture.R
 import ru.geeekbrains.princeschdailypicture.databinding.FragmentMainBinding
-import ru.geeekbrains.princeschdailypicture.repository.PictureOfTheDayData
+import ru.geeekbrains.princeschdailypicture.repository.AppState
+import ru.geeekbrains.princeschdailypicture.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
 
@@ -28,8 +27,6 @@ class MainFragment : Fragment() {
     private val viewModel: MainViewModel by lazy {
         ViewModelProvider(this).get(MainViewModel::class.java)
     }
-
-    private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
     private var isMain = true
     private var isHD = false
@@ -90,9 +87,6 @@ class MainFragment : Fragment() {
         viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
         viewModel.sendServerRequest()
 
-        bottomSheetBehavior = BottomSheetBehavior.from(binding.includeLayout.bottomSheetContainer)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
-
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data =
@@ -110,21 +104,21 @@ class MainFragment : Fragment() {
 
     }
 
-    private fun renderData(data: PictureOfTheDayData) {
+    private fun renderData(data: AppState) {
         when (data) {
-            is PictureOfTheDayData.Success -> {
+            is AppState.Success -> {
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
                 if (url.isNullOrEmpty()) {
                     with(binding) {
-                        main.showMessage("URL is null or empty")
+                        main.showMessage(getString(R.string.url_null_or_empty))
                     }
                 } else {
                     with(binding) {
                         loadingLayout.hide()
-                        includeLayout.bottomSheetDescriptionHeader.text =
+                        descriptionHeader.text =
                             data.serverResponseData.title
-                        includeLayout.bottomSheetDescription.text =
+                        description.text =
                             data.serverResponseData.explanation
                         if (isHD) {
                             imageView.load(data.serverResponseData.hdurl) {
@@ -138,10 +132,10 @@ class MainFragment : Fragment() {
                     }
                 }
             }
-            is PictureOfTheDayData.Loading -> {
+            is AppState.Loading -> {
                 binding.loadingLayout.show()
             }
-            is PictureOfTheDayData.Error -> {
+            is AppState.Error -> {
                 with(binding) {
                     main.showMessage(data.toString())
                 }
@@ -151,8 +145,15 @@ class MainFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT).show()
+            R.id.app_bar_fav -> Toast.makeText(context, getString(R.string.favourite), Toast.LENGTH_SHORT).show()
             R.id.app_bar_settings -> {
+                requireActivity().supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container, SettingsFragment.newInstance())
+                    .addToBackStack("")
+                    .commit()
+            }
+            R.id.app_bar_test -> {
                 requireActivity().supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.container, ChipsFragment.newInstance())

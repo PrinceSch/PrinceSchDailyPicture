@@ -19,7 +19,7 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = LayoutBottomBarBinding.inflate(inflater)
         return binding.root
     }
@@ -29,10 +29,10 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
         binding.navigationView.setNavigationItemSelectedListener { it ->
             when (it.itemId) {
                 R.id.app_bar_fav -> {
-                    Toast.makeText(context, "Favorite", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, getString(R.string.favourite), Toast.LENGTH_SHORT).show()
                 }
                 R.id.app_bar_settings -> {
-                    Toast.makeText(context, "Settings", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, getString(R.string.settings), Toast.LENGTH_SHORT).show()
                 }
             }
             true
