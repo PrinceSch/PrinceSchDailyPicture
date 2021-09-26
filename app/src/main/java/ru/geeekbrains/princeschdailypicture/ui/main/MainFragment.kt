@@ -11,13 +11,13 @@ import androidx.lifecycle.ViewModelProvider
 import coil.api.load
 import ru.geeekbrains.princeschdailypicture.R
 import ru.geeekbrains.princeschdailypicture.data.AppState
-import ru.geeekbrains.princeschdailypicture.databinding.FragmentMainBinding
+import ru.geeekbrains.princeschdailypicture.databinding.FragmentMainStartBinding
 import ru.geeekbrains.princeschdailypicture.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
 
-    private var _binding: FragmentMainBinding? = null
-    private val binding: FragmentMainBinding
+    private var _binding: FragmentMainStartBinding? = null
+    private val binding: FragmentMainStartBinding
         get() {
             return _binding!!
         }
@@ -33,7 +33,7 @@ class MainFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentMainBinding.inflate(inflater)
+        _binding = FragmentMainStartBinding.inflate(inflater)
         return binding.root
     }
 

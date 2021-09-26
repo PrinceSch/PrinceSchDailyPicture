@@ -31,7 +31,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76b3062d-9cae-422f-ad75-ecee74f9f3f3" name="Default Changelist" comment="разобралась с круговым расположением">
+    <list default="true" id="76b3062d-9cae-422f-ad75-ecee74f9f3f3" name="Default Changelist" comment="потыкалась в Layout Behaviors, даже смогла вписать свой параметр :)">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_magnifier.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main_end.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/fragment_main_scene.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -42,10 +45,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/TestFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/TestFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/MainFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/MainFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main_start.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +56,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Win10_Game_OS\.android\avd\Nexus_5_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[1d64dcc10506]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -133,16 +136,17 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="B:\Study\PrinceSchDailyPicture\app\src\main\res\drawable" />
+      <recent name="B:\Study\PrinceSchDailyPicture\app\src\main\res\layout" />
+      <recent name="B:\Study\PrinceSchDailyPicture\app\src\main\res\drawable-v24" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="B:\Study\PrinceSchDailyPicture\app\src\main\res\drawable" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="ru.geeekbrains.princeschdailypicture.data" />
       <recent name="ru.geeekbrains.princeschdailypicture.viewmodel" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="B:\Study\PrinceSchDailyPicture\app\src\main\res\drawable" />
-      <recent name="B:\Study\PrinceSchDailyPicture\app\src\main\res\drawable-v24" />
     </key>
   </component>
   <component name="RunManager">
@@ -368,7 +372,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632649271505</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="потыкалась в Layout Behaviors, даже смогла вписать свой параметр :)">
+      <created>1632675233676</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1632675233676</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -403,6 +414,7 @@
     <MESSAGE value="потыкала в гайдлайны" />
     <MESSAGE value="потыкала в барьеры" />
     <MESSAGE value="разобралась с круговым расположением" />
-    <option name="LAST_COMMIT_MESSAGE" value="разобралась с круговым расположением" />
+    <MESSAGE value="потыкалась в Layout Behaviors, даже смогла вписать свой параметр :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="потыкалась в Layout Behaviors, даже смогла вписать свой параметр :)" />
   </component>
 </project>
