@@ -59,18 +59,19 @@ class MarsRoverFragment : Fragment() {
 
         when (data) {
             is AppState.Loading -> {
-                binding.loadingLayout.loadingLayout.show()
+                binding.marsRoverImageView.load(R.drawable.loading_animation)
             }
             is AppState.Error -> {
                 with(binding) {
-                    rootMarsFragment.showMessage(data.error.toString())
+                    marsText.text = data.error.toString()
+                    marsText.show()
                 }
             }
             is AppState.SuccessMarsRover -> {
                 if (data.serverResponseDataMR.photos.isEmpty()) {
                     with(binding){
-                        rootMarsFragment.showMessage(getString(R.string.empty_array))
-                        loadingLayout.loadingLayout.hide()
+                        marsText.text = getString(R.string.empty_array)
+                        marsText.show()
                     }
                 } else {
                     val serverResponseData = data.serverResponseDataMR.photos
@@ -82,9 +83,10 @@ class MarsRoverFragment : Fragment() {
                         }
                     } else {
                         with(binding) {
-                            loadingLayout.loadingLayout.hide()
+                            marsText.hide()
                             marsRoverImageView.load(image) {
                                 error(R.drawable.ic_no_photo_vector)
+                                placeholder(R.drawable.loading_animation)
                             }
                         }
                     }

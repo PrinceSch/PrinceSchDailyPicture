@@ -17,6 +17,20 @@
             android:layout_height="match_parent"
             android:padding="@dimen/def_padding">
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.3"
+                android:orientation="horizontal"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineVertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.85"
+                android:orientation="vertical"/>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout"
                 android:layout_width="@dimen/null_dimen"
@@ -47,9 +61,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/hd"
                 app:rippleColor="@color/teal_200"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guidelineVertical"
                 app:layout_constraintTop_toBottomOf="@id/input_layout"
-                app:layout_constraintBottom_toTopOf="@id/image_view" />
+                app:layout_constraintBottom_toTopOf="@id/guidelineHorizontal" />
 
             <ru.geeekbrains.princeschdailypicture.utils.MyImageView
                 android:id="@+id/image_view"
@@ -58,7 +72,7 @@
                 android:contentDescription="@string/photo_of_the_day_stub"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/chip_hd"
+                app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal"
                 app:layout_constraintBottom_toTopOf="@id/description_header"/>
 
             <TextView
@@ -67,7 +81,7 @@
                 android:id="@+id/videoURL"
                 android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@id/image_view"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/description_header"/>
 
@@ -77,10 +91,10 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/cinzel_decorative_black"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/description"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/videoURL"
-                app:layout_constraintBottom_toTopOf="@id/description"/>
+                app:layout_constraintTop_toBottomOf="@id/videoURL" />
 
             <TextView
                 android:id="@+id/description"

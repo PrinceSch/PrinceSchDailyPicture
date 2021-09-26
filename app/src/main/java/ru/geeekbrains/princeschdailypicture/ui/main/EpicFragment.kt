@@ -61,7 +61,7 @@ class EpicFragment : Fragment() {
     private fun renderData(data: AppState) {
         when (data) {
             is AppState.Loading -> {
-                binding.loadingLayout.loadingLayout.show()
+                binding.epicImageView.load(R.drawable.loading_animation)
             }
             is AppState.Error -> {
                 with(binding) {
@@ -72,7 +72,6 @@ class EpicFragment : Fragment() {
                 if (data.serverResponseDataEPIC.isEmpty()) {
                     with(binding){
                         rootEpicFragment.showMessage(getString(R.string.empty_array))
-                        loadingLayout.loadingLayout.hide()
                     }
                 } else {
                     val serverResponseData = data.serverResponseDataEPIC[0]
@@ -84,9 +83,9 @@ class EpicFragment : Fragment() {
                         }
                     } else {
                         with(binding) {
-                            loadingLayout.loadingLayout.hide()
                             epicImageView.load("https://epic.gsfc.nasa.gov/archive/natural/${dateForImage}/jpg/${serverResponseData.image}.jpg") {
                                 error(R.drawable.ic_no_photo_vector)
+                                placeholder(R.drawable.loading_animation)
                             }
                         }
                     }

@@ -106,10 +106,12 @@ class MainFragment : Fragment() {
                 if (isHD) {
                     imageView.load(hdurl) {
                         error(R.drawable.ic_no_photo_vector)
+                        placeholder(R.drawable.loading_animation)
                     }
                 } else {
                     imageView.load(url) {
                         error(R.drawable.ic_no_photo_vector)
+                        placeholder(R.drawable.loading_animation)
                     }
                 }
             }
