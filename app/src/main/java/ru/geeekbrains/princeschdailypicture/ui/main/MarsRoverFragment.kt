@@ -79,7 +79,8 @@ class MarsRoverFragment : Fragment() {
                     //TODO обработать все элементы массива. доработать разные камеры, чтоб не падало при отсутвии фото с curiosity в выбранный день
                     if (image.isNullOrEmpty()) {
                         with(binding) {
-                            rootMarsFragment.showMessage(getString(R.string.url_null_or_empty))
+                            marsText.text = getString(R.string.url_null_or_empty)
+                            marsText.show()
                         }
                     } else {
                         with(binding) {

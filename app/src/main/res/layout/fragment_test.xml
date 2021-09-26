@@ -6,46 +6,50 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.Barrier
+    <Space
+        android:id="@+id/anchorCircle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/barrier"
-        app:barrierDirection="end"
-        app:constraint_referenced_ids="btn1, btn2, btn4" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="buuuuutton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="1"
+        app:layout_constraintCircle="@id/anchorCircle"
+        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintCircleAngle="0"/>
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/default_chip"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn1" />
+        android:text="2"
+        app:layout_constraintCircle="@id/anchorCircle"
+        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintCircleAngle="90"/>
 
     <Button
         android:id="@+id/btn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/default_chip"
-        app:layout_constraintStart_toEndOf="@id/barrier"
-        app:layout_constraintTop_toBottomOf="@id/btn4"
-        />
+        android:text="3"
+        app:layout_constraintCircle="@id/anchorCircle"
+        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintCircleAngle="180"/>
 
     <Button
         android:id="@+id/btn4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/default_chip"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn2" />
+        android:text="4"
+        app:layout_constraintCircle="@id/anchorCircle"
+        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintCircleAngle="270"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

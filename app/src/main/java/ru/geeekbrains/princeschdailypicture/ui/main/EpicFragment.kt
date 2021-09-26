@@ -65,13 +65,15 @@ class EpicFragment : Fragment() {
             }
             is AppState.Error -> {
                 with(binding) {
-                    rootEpicFragment.showMessage(data.error.toString())
+                    epicText.text = data.error.toString()
+                    epicText.show()
                 }
             }
             is AppState.SuccessEPIC -> {
                 if (data.serverResponseDataEPIC.isEmpty()) {
                     with(binding){
-                        rootEpicFragment.showMessage(getString(R.string.empty_array))
+                        epicText.text = getString(R.string.empty_array)
+                        epicText.show()
                     }
                 } else {
                     val serverResponseData = data.serverResponseDataEPIC[0]
@@ -79,7 +81,8 @@ class EpicFragment : Fragment() {
                     val image = serverResponseData.image
                     if (image.isNullOrEmpty()) {
                         with(binding) {
-                            rootEpicFragment.showMessage(getString(R.string.url_null_or_empty))
+                            epicText.text = getString(R.string.url_null_or_empty)
+                            epicText.show()
                         }
                     } else {
                         with(binding) {
