@@ -31,7 +31,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76b3062d-9cae-422f-ad75-ecee74f9f3f3" name="Default Changelist" comment="потыкала в барьеры">
+    <list default="true" id="76b3062d-9cae-422f-ad75-ecee74f9f3f3" name="Default Changelist" comment="разобралась с круговым расположением">
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -43,9 +43,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/EpicFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/EpicFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/MarsRoverFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/MarsRoverFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/TestFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/TestFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -361,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632647877669</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="разобралась с круговым расположением">
+      <created>1632649271505</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1632649271505</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -395,6 +402,7 @@
     <MESSAGE value="допилила bottomAppBar" />
     <MESSAGE value="потыкала в гайдлайны" />
     <MESSAGE value="потыкала в барьеры" />
-    <option name="LAST_COMMIT_MESSAGE" value="потыкала в барьеры" />
+    <MESSAGE value="разобралась с круговым расположением" />
+    <option name="LAST_COMMIT_MESSAGE" value="разобралась с круговым расположением" />
   </component>
 </project>
