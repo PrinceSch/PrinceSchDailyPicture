@@ -10,16 +10,16 @@ import ru.geeekbrains.princeschdailypicture.databinding.FragmentChipsBinding
 
 class ChipsFragment: Fragment() {
 
-    var _bindong: FragmentChipsBinding? = null
+    var _binding: FragmentChipsBinding? = null
     val binding: FragmentChipsBinding
         get() {
-            return _bindong!!
+            return _binding!!
         }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _bindong =  FragmentChipsBinding.inflate(inflater)
+        _binding =  FragmentChipsBinding.inflate(inflater)
         return  binding.root
     }
 
@@ -35,7 +35,7 @@ class ChipsFragment: Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        _bindong = null
+        _binding = null
     }
 
     companion object {

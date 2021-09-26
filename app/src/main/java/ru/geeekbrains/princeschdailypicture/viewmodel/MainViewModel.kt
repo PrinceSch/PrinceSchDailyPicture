@@ -7,9 +7,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import ru.geeekbrains.princeschdailypicture.BuildConfig
-import ru.geeekbrains.princeschdailypicture.repository.PODRetrofitImpl
-import ru.geeekbrains.princeschdailypicture.repository.PODServerResponseData
-import ru.geeekbrains.princeschdailypicture.repository.AppState
+import ru.geeekbrains.princeschdailypicture.data.PODrepository.PODRetrofitImpl
+import ru.geeekbrains.princeschdailypicture.data.PODrepository.PODServerResponseData
+import ru.geeekbrains.princeschdailypicture.data.AppState
 
 class MainViewModel(
     private val liveDataToObserve: MutableLiveData<AppState> = MutableLiveData(),
@@ -33,7 +33,7 @@ class MainViewModel(
                         response: Response<PODServerResponseData>
                     ) {
                         if (response.isSuccessful && response.body() != null) {
-                            liveDataToObserve.postValue(AppState.Success(response.body() as PODServerResponseData))
+                            liveDataToObserve.postValue(AppState.SuccessPOD(response.body() as PODServerResponseData))
                         } else {
                             val message = response.message()
                             if (message.isNullOrEmpty()) {

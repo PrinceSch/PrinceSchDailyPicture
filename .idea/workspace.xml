@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="76b3062d-9cae-422f-ad75-ecee74f9f3f3" name="Default Changelist" comment="допиливание логики">
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/PrinceSchDailyPicture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/app/PrinceSchDailyPicture.app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_09_2021_23_09_[Default_Changelist]/insight_background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_09_2021_23_09_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_09_2021_23_09__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\PrinceSch\.android\avd\Nexus_5_API_30.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PrinceSchDailyPicture" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PrinceSchDailyPicture" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PrinceSchDailyPicture" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Sealed Class" />
+        <option value="Kotlin File" />
+        <option value="layoutResourceFile_vertical" />
+        <option value="valueResourceFile" />
+        <option value="resourceFile" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
+        <option value="layoutResourceFile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="lesson1" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1xonV8TDaOCZsRZbf7Y8fEGRsCf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="android-custom-viewB:/Study/PrinceSchDailyPicture/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/EquilateralImageView.kt_SELECTED" value="EquilateralImageView" />
+    <property name="android-custom-viewB:/Study/PrinceSchDailyPicture/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/MylImageView.kt_SELECTED" value="MylImageView" />
+    <property name="android-custom-viewB:/Study/PrinceSchDailyPicture/app/src/main/java/ru/geeekbrains/princeschdailypicture/utlis/MyImageView.kt_SELECTED" value="CustomImageView" />
+    <property name="android-custom-viewC:/Users/Win10_Game_OS/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_SELECTED" value="View" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="ru.geeekbrains.princeschdailypicture.data" />
+      <recent name="ru.geeekbrains.princeschdailypicture.viewmodel" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="B:\Study\PrinceSchDailyPicture\app\src\main\res\drawable-v24" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="PrinceSchDailyPicture.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76b3062d-9cae-422f-ad75-ecee74f9f3f3" name="Default Changelist" comment="" />
+      <changelist id="" name="New changelist" comment="" />
+      <created>1631030329780</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1631030329780</updated>
+    </task>
+    <task id="LOCAL-00001" summary="1. Изучите API NASA, который мы будем использовать в течение курса, и продумайте, как вы выстроите своё приложение, какие там будут экраны.&#10;2. Создайте первый экран приложения с фотографией дня.">
+      <created>1631537802377</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631537802377</updated>
+    </task>
+    <task id="LOCAL-00002" summary="3. Добавьте описание (приходит с сервера) под фотографией в виде текстовой подписи или в виде BottomSheet.">
+      <created>1631545418234</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631545418234</updated>
+    </task>
+    <task id="LOCAL-00003" summary="4. Добавьте текстовое поле для поиска неизвестных слов в «Википедии».">
+      <created>1631547957410</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1631547957410</updated>
+    </task>
+    <task id="LOCAL-00004" summary="5. Добавьте адаптивную иконку для вашего приложения.">
+      <created>1631548417448</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1631548417448</updated>
+    </task>
+    <task id="LOCAL-00005" summary="5. Добавьте адаптивную иконку для вашего приложения.">
+      <created>1631548426008</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1631548426008</updated>
+    </task>
+    <task id="LOCAL-00006" summary="6. * Имплементируйте нижнюю навигацию.">
+      <created>1631613121111</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1631613121111</updated>
+    </task>
+    <task id="LOCAL-00007" summary="код чипов по образцу">
+      <created>1631613890298</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1631613890298</updated>
+    </task>
+    <task id="LOCAL-00008" summary="8.** Добавьте чипы над фото для фото в формате HD">
+      <created>1631615515547</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1631615515547</updated>
+    </task>
+    <task id="LOCAL-00009" summary="урок 2. исправила по комментариям преподавателя, плюс добавила пропущенные файлы&#10;1. Создайте стили для ваших компонентов и применяйте эти стили.">
+      <created>1631799613108</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1631799613108</updated>
+    </task>
+    <task id="LOCAL-00010" summary="4. * Используйте свои шрифты в приложении.">
+      <created>1631800516959</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1631800516959</updated>
+    </task>
+    <task id="LOCAL-00011" summary="2. Создайте две темы для вашего приложения и в отдельном экране настроек добавьте возможность менять эти темы. Тем может быть больше двух, и это не обязательно тёмная и светлая темы. Это могут быть, например, космическая, лунная, марсианская темы.&#10;3. Создайте свой уникальный стиль для приложения и его виджетов.">
+      <created>1631813348640</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1631813348640</updated>
+    </task>
+    <task id="LOCAL-00012" summary="поправил фон векторных картинок %)">
+      <created>1631813507856</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1631813507856</updated>
+    </task>
+    <task id="LOCAL-00013" summary="1. настроил дизайн вкладок">
+      <created>1632058981368</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1632058981368</updated>
+    </task>
+    <task id="LOCAL-00014" summary="2 (теоритически). Запутался с загрузкой данных, запрашиваю помощь зала Х(">
+      <created>1632145653446</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1632145653446</updated>
+    </task>
+    <task id="LOCAL-00015" summary="допиливание логики">
+      <created>1632246704310</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1632246704310</updated>
+    </task>
+    <task id="LOCAL-00016" summary="допиливание логики">
+      <created>1632246851597</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1632246851597</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1. Изучите API NASA, который мы будем использовать в течение курса, и продумайте, как вы выстроите своё приложение, какие там будут экраны.&#10;2. Создайте первый экран приложения с фотографией дня." />
+    <MESSAGE value="3. Добавьте описание (приходит с сервера) под фотографией в виде текстовой подписи или в виде BottomSheet." />
+    <MESSAGE value="4. Добавьте текстовое поле для поиска неизвестных слов в «Википедии»." />
+    <MESSAGE value="5. Добавьте адаптивную иконку для вашего приложения." />
+    <MESSAGE value="6. * Имплементируйте нижнюю навигацию." />
+    <MESSAGE value="код чипов по образцу" />
+    <MESSAGE value="8.** Добавьте чипы над фото для фото в формате HD" />
+    <MESSAGE value="урок 2. исправила по комментариям преподавателя, плюс добавила пропущенные файлы&#10;1. Создайте стили для ваших компонентов и применяйте эти стили." />
+    <MESSAGE value="4. * Используйте свои шрифты в приложении." />
+    <MESSAGE value="2. Создайте две темы для вашего приложения и в отдельном экране настроек добавьте возможность менять эти темы. Тем может быть больше двух, и это не обязательно тёмная и светлая темы. Это могут быть, например, космическая, лунная, марсианская темы.&#10;3. Создайте свой уникальный стиль для приложения и его виджетов." />
+    <MESSAGE value="поправил фон векторных картинок %)" />
+    <MESSAGE value="1. настроил дизайн вкладок" />
+    <MESSAGE value="2 (теоритически). Запутался с загрузкой данных, запрашиваю помощь зала Х(" />
+    <MESSAGE value="допиливание логики" />
+    <option name="LAST_COMMIT_MESSAGE" value="допиливание логики" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2398" y="236" key="#Notifications" timestamp="1631810415950">
+      <screen x="1890" y="0" width="1512" height="824" />
+    </state>
+    <state x="2398" y="236" key="#Notifications/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631810415950" />
+    <state x="248" y="140" key="#PSD" timestamp="1632242131304">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="248" y="140" key="#PSD/0.0.1366.728@0.0.1366.728" timestamp="1632242131304" />
+    <state x="2164" y="158" key="#PSD/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631596551813" />
+    <state x="2438" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1632055692081">
+      <screen x="1890" y="0" width="1512" height="824" />
+    </state>
+    <state x="2438" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1632055692081" />
+    <state x="550" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1632137373205">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="550" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1632137373205" />
+    <state x="655" y="257" width="744" height="417" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1632137361568">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2406" y="204" width="480" height="416" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631809875581" />
+    <state x="655" y="257" width="744" height="417" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1632137361568" />
+    <state x="84" y="82" width="1198" height="564" key="AVDManager" timestamp="1632241714067">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="84" y="82" width="1198" height="564" key="AVDManager/0.0.1366.728@0.0.1366.728" timestamp="1632241714067" />
+    <state x="1983" y="93" width="1326" height="638" key="AVDManager/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631597695713" />
+    <state x="2227" y="167" key="AndroidCreateResourceDirectoryDialog" timestamp="1631807895556">
+      <screen x="1890" y="0" width="1512" height="824" />
+    </state>
+    <state x="2227" y="167" key="AndroidCreateResourceDirectoryDialog/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631807895556" />
+    <state x="304" y="148" width="838" height="485" key="AndroidCreateResourceFileDialog" timestamp="1632244999753">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="304" y="148" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1632244999753" />
+    <state x="2227" y="167" width="838" height="485" key="AndroidCreateResourceFileDialog/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1632053511037" />
+    <state x="544" y="194" key="AndroidCreateXmlResourceDialog" timestamp="1632243686496">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="544" y="194" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1632243686496" />
+    <state x="602" y="220" key="AndroidCreateXmlResourceDialog/0.0.1512.824/1890.0.1512.824@0.0.1512.824" timestamp="1631742542183" />
+    <state x="2492" y="220" key="AndroidCreateXmlResourceDialog/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1632054805187" />
+    <state x="2327" y="167" key="Downloadable.Font.Dialog.Size" timestamp="1631800307832">
+      <screen x="1890" y="0" width="1512" height="824" />
+    </state>
+    <state x="2327" y="167" key="Downloadable.Font.Dialog.Size/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631800307832" />
+    <state x="485" y="148" key="FileChooserDialogImpl" timestamp="1632246955465">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="485" y="148" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1632246955465" />
+    <state x="2427" y="167" key="FileChooserDialogImpl/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631596707026" />
+    <state x="2495" y="310" key="Github.ShareDialog" timestamp="1631030443392">
+      <screen x="1890" y="0" width="1512" height="824" />
+    </state>
+    <state x="2495" y="310" key="Github.ShareDialog/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631030443392" />
+    <state x="2400" y="117" key="Github.UntrackedFilesDialog" timestamp="1631030477127">
+      <screen x="1890" y="0" width="1512" height="824" />
+    </state>
+    <state x="2400" y="117" key="Github.UntrackedFilesDialog/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631030477127" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1632246363089">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1632246363089" />
+    <state width="1469" height="210" key="GridCell.Tab.0.bottom/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1632056968411" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1632145291335" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1632246363089">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1632246363089" />
+    <state width="1469" height="210" key="GridCell.Tab.0.center/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1632056968410" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1632145291335" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1632246363089">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1632246363089" />
+    <state width="1469" height="210" key="GridCell.Tab.0.left/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1632056968410" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1632145291334" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1632246363089">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1632246363089" />
+    <state width="1469" height="210" key="GridCell.Tab.0.right/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1632056968411" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1632145291335" />
+    <state width="1323" height="179" key="GridCell.Tab.1.bottom" timestamp="1632244901287">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1632244901287" />
+    <state width="1877" height="282" key="GridCell.Tab.1.bottom/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1632145291335" />
+    <state width="1323" height="179" key="GridCell.Tab.1.center" timestamp="1632244901287">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1632244901287" />
+    <state width="1877" height="282" key="GridCell.Tab.1.center/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1632145291335" />
+    <state width="1323" height="179" key="GridCell.Tab.1.left" timestamp="1632244901287">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1632244901287" />
+    <state width="1877" height="282" key="GridCell.Tab.1.left/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1632145291335" />
+    <state width="1323" height="179" key="GridCell.Tab.1.right" timestamp="1632244901287">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1632244901287" />
+    <state width="1877" height="282" key="GridCell.Tab.1.right/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1632145291335" />
+    <state x="239" y="18" key="SettingsEditor" timestamp="1632242018806">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="239" y="18" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1632242018806" />
+    <state x="2155" y="51" key="SettingsEditor/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631597167119" />
+    <state x="2439" y="317" key="SetupCloudRepositoryDialog" timestamp="1631551072569">
+      <screen x="1890" y="0" width="1512" height="824" />
+    </state>
+    <state x="2439" y="317" key="SetupCloudRepositoryDialog/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631551072569" />
+    <state x="513" y="233" key="VCS.EditChangelistDialog" timestamp="1632246802664">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="513" y="233" key="VCS.EditChangelistDialog/0.0.1366.728@0.0.1366.728" timestamp="1632246802664" />
+    <state x="315" y="128" key="Vcs.Push.Dialog.v2" timestamp="1632246853914">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="315" y="128" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1632246853914" />
+    <state x="2239" y="145" key="Vcs.Push.Dialog.v2/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1632058985157" />
+    <state x="443" y="183" key="Vcs.Push.Dialog.v2/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1632145688880" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1632240703565">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1632240703565" />
+    <state x="0" y="0" width="1100" height="715" key="dock-window-1" timestamp="1632245593109">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" width="1100" height="715" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1632245593109" />
+    <state x="2203" y="95" width="1224" height="810" key="dock-window-1/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631806962455" />
+    <state x="1920" y="0" width="1552" height="911" key="dock-window-1/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1632139643169" />
+    <state x="0" y="0" width="1100" height="715" key="dock-window-2" timestamp="1632245906827">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" width="1100" height="715" key="dock-window-2/0.0.1366.728@0.0.1366.728" timestamp="1632245906827" />
+    <state x="245" y="0" width="1224" height="810" key="dock-window-2/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631807288538" />
+    <state x="112" y="11" width="1224" height="810" key="dock-window-3" timestamp="1631810256225">
+      <screen x="0" y="0" width="1512" height="824" />
+    </state>
+    <state x="112" y="11" width="1224" height="810" key="dock-window-3/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631810256225" />
+    <state x="142" y="4" width="1224" height="810" maximized="true" key="dock-window-4" timestamp="1631812816721">
+      <screen x="0" y="0" width="1512" height="824" />
+    </state>
+    <state x="142" y="4" width="1224" height="810" maximized="true" key="dock-window-4/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631812816721" />
+    <state x="208" y="0" width="1224" height="810" key="dock-window-5" timestamp="1631812816721">
+      <screen x="0" y="0" width="1512" height="824" />
+    </state>
+    <state x="208" y="0" width="1224" height="810" key="dock-window-5/0.0.1512.824/1890.0.1512.824@1890.0.1512.824" timestamp="1631812816721" />
+  </component>
+</project>
