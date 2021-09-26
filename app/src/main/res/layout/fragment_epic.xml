@@ -16,6 +16,13 @@
            android:layout_width="match_parent"
            android:layout_height="match_parent">
 
+           <androidx.constraintlayout.widget.Barrier
+               android:id="@+id/barrier"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:constraint_referenced_ids="epicButton"
+               app:barrierDirection="bottom"/>
+
            <DatePicker
                android:id="@+id/epicDatePicker"
                android:layout_width="match_parent"
@@ -45,7 +52,7 @@
                android:layout_height="wrap_content"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintTop_toBottomOf="@id/epicButton"
+               app:layout_constraintTop_toBottomOf="@id/barrier"
                android:visibility="gone"/>
 
            <ImageView
@@ -54,7 +61,7 @@
                android:layout_height="wrap_content"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintTop_toBottomOf="@id/epicText"/>
+               app:layout_constraintTop_toBottomOf="@id/barrier"/>
 
        </androidx.constraintlayout.widget.ConstraintLayout>
 
