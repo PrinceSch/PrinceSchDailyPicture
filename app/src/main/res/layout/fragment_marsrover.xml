@@ -15,21 +15,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <DatePicker
-                android:id="@+id/marsRoverDatePicker"
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:constraint_referenced_ids="marsButton"
+                app:barrierDirection="bottom"/>
+
+            <DatePicker
+                android:id="@+id/marsRoverDatePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@color/textColor"
-                android:datePickerMode="spinner"
                 android:calendarViewShown="false"
-                app:layout_constraintBottom_toTopOf="@id/marsRoverImageView"
+                android:datePickerMode="spinner"
+                app:layout_constraintBottom_toTopOf="@id/marsButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/marsButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/marsRoverDatePicker"
                 app:layout_constraintStart_toStartOf="parent"
@@ -37,20 +44,25 @@
                 app:layout_constraintBottom_toTopOf="@id/marsRoverImageView"
                 android:text="@string/select_date"/>
 
+            <TextView
+                android:id="@+id/marsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrier"
+                android:visibility="gone"/>
+
             <ImageView
                 android:id="@+id/marsRoverImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/marsButton"/>
+                app:layout_constraintTop_toBottomOf="@id/barrier"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
-
-<include layout="@layout/layout_loading"
-    android:id="@+id/loadingLayout"/>
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
