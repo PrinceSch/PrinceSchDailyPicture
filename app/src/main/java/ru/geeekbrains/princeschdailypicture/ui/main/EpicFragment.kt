@@ -1,11 +1,14 @@
 package ru.geeekbrains.princeschdailypicture.ui.main
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.transition.*
 import coil.api.load
 import ru.geeekbrains.princeschdailypicture.R
 import ru.geeekbrains.princeschdailypicture.data.AppState
@@ -26,6 +29,7 @@ class EpicFragment : Fragment() {
 
     private var dateForAPI: String? = null
     private var dateForImage: String? = null
+    private var dateIsVisible = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,19 +45,25 @@ class EpicFragment : Fragment() {
 
         with(binding) {
             epicButton.setOnClickListener {
-                val day = epicDatePicker.dayOfMonth
-                val month = epicDatePicker.month + 1
-                val year = epicDatePicker.year
+                if (dateIsVisible) {
+                    val day = epicDatePicker.dayOfMonth
+                    val month = epicDatePicker.month + 1
+                    val year = epicDatePicker.year
 
-                if (month < 10) {
-                    dateForAPI = "${year}-0${month}-${day}"
-                    dateForImage = "${year}/0${month}/${day}"
+                    if (month < 10) {
+                        dateForAPI = "${year}-0${month}-${day}"
+                        dateForImage = "${year}/0${month}/${day}"
+                    } else {
+                        dateForAPI = "${year}-${month}-${day}"
+                        dateForImage = "${year}/${month}/${day}"
+                    }
+
+                    viewModel.getEpicDataFromServer(dateForAPI!!)
                 } else {
-                    dateForAPI = "${year}-${month}-${day}"
-                    dateForImage = "${year}/${month}/${day}"
+                    TransitionManager.beginDelayedTransition(rootEpicFragment, Slide(Gravity.TOP))
+                    dateIsVisible = !dateIsVisible
+                    epicDatePicker.show()
                 }
-
-                viewModel.getEpicDataFromServer(dateForAPI!!)
             }
         }
     }
@@ -65,15 +75,13 @@ class EpicFragment : Fragment() {
             }
             is AppState.Error -> {
                 with(binding) {
-                    epicText.text = data.error.toString()
-                    epicText.show()
+                    rootEpicFragment.showMessage(data.error.toString())
                 }
             }
             is AppState.SuccessEPIC -> {
                 if (data.serverResponseDataEPIC.isEmpty()) {
-                    with(binding){
-                        epicText.text = getString(R.string.empty_array)
-                        epicText.show()
+                    with(binding) {
+                        rootEpicFragment.showMessage(getString(R.string.empty_array))
                     }
                 } else {
                     val serverResponseData = data.serverResponseDataEPIC[0]
@@ -81,11 +89,13 @@ class EpicFragment : Fragment() {
                     val image = serverResponseData.image
                     if (image.isNullOrEmpty()) {
                         with(binding) {
-                            epicText.text = getString(R.string.url_null_or_empty)
-                            epicText.show()
+                            rootEpicFragment.showMessage(getString(R.string.url_null_or_empty))
                         }
                     } else {
                         with(binding) {
+                            TransitionManager.beginDelayedTransition(rootEpicFragment, Slide(Gravity.TOP))
+                            dateIsVisible = !dateIsVisible
+                            epicDatePicker.hide()
                             epicImageView.load("https://epic.gsfc.nasa.gov/archive/natural/${dateForImage}/jpg/${serverResponseData.image}.jpg") {
                                 error(R.drawable.ic_no_photo_vector)
                                 placeholder(R.drawable.loading_animation)

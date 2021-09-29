@@ -6,18 +6,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.transition.ChangeBounds
+import androidx.transition.ChangeImageTransform
+import androidx.transition.TransitionManager
+import androidx.transition.TransitionSet
 import coil.api.load
 import ru.geeekbrains.princeschdailypicture.R
 import ru.geeekbrains.princeschdailypicture.data.AppState
-import ru.geeekbrains.princeschdailypicture.databinding.FragmentMainStartBinding
+import ru.geeekbrains.princeschdailypicture.databinding.FragmentMainBinding
 import ru.geeekbrains.princeschdailypicture.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
 
-    private var _binding: FragmentMainStartBinding? = null
-    private val binding: FragmentMainStartBinding
+    private var _binding: FragmentMainBinding? = null
+    private val binding: FragmentMainBinding
         get() {
             return _binding!!
         }
@@ -27,13 +32,14 @@ class MainFragment : Fragment() {
     }
 
     private var isHD = false
+    private var isExpanded = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentMainStartBinding.inflate(inflater)
+        _binding = FragmentMainBinding.inflate(inflater)
         return binding.root
     }
 
@@ -55,6 +61,16 @@ class MainFragment : Fragment() {
                 viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
                 viewModel.sendServerRequest()
             }
+
+            imageView.setOnClickListener {
+                isExpanded = !isExpanded
+                val set = TransitionSet()
+                set.addTransition(ChangeBounds())
+                set.addTransition(ChangeImageTransform())
+
+                TransitionManager.beginDelayedTransition(main, set)
+                imageView.scaleType = if (isExpanded) ImageView.ScaleType.CENTER_CROP else ImageView.ScaleType.FIT_CENTER
+            }
         }
 
     }
@@ -72,7 +88,7 @@ class MainFragment : Fragment() {
                 } else setData(data)
             }
             is AppState.Loading -> {
-                binding.loadingLayout.loadingLayout.show()
+                binding.includedLayout.loadingLayout.show()
             }
             is AppState.Error -> {
                 with(binding) {
@@ -98,7 +114,7 @@ class MainFragment : Fragment() {
             }
         } else {
             with(binding) {
-                loadingLayout.loadingLayout.hide()
+                includedLayout.loadingLayout.hide()
                 descriptionHeader.text =
                     dataPOD.serverResponseData.title
                 description.text =

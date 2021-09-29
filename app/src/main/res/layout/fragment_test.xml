@@ -1,53 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/transitions_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:padding="@dimen/def_padding"
     android:fitsSystemWindows="true">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+        android:orientation="vertical"
+        android:gravity="center">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AutoTransition" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonAuto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mainBackground"
+            android:text="Animate" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textAuto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/def_padding"
+            android:text="Transitions example"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/def_padding"
+            android:src="@drawable/separator"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/def_padding"
+            android:text="Slide" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonSlide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mainBackground"
+            android:text="Animate" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textSlide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/def_padding"
+            android:text="Transitions example"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/def_padding"
+            android:src="@drawable/separator"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/def_padding"
+            android:text="Fade" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonFade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mainBackground"
+            android:text="Animate" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textFade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/def_padding"
+            android:text="Transitions example"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/def_padding"
+            android:src="@drawable/separator"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/def_padding"
+            android:text="Explode" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonExplode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mainBackground"
+            android:text="Animate" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/def_padding"
+            android:src="@drawable/separator"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/def_padding"
+            android:text="Expand" />
+
+        <ru.geeekbrains.princeschdailypicture.utils.MyImageView
+            android:id="@+id/expandImageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            android:src="@drawable/insight_background"
+            android:scaleType="fitCenter"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:scaleType="center"
-                android:src="@drawable/insight_background" />
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-        <TextView
+        <ImageView
             android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/def_padding"
+            android:src="@drawable/separator"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/darkMars"
-            android:paddingStart="@dimen/def_padding"
-            android:text="Mars"
-            android:textColor="@android:color/white"
-            android:textSize="36dp" />
+            android:layout_marginTop="@dimen/def_padding"
+            android:text="Shuffle" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonShuffle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mainBackground"
+            android:text="Animate" />
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:padding="@dimen/def_padding"
-        app:layout_behavior=".ui.main.ViewAppBarBehavior">
-
-        <TextView
+        <LinearLayout
+            android:id="@+id/containerShuffle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/test_behavior"
-            android:textSize="22sp"/>
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+        </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
