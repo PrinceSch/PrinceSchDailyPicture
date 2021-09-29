@@ -1,11 +1,14 @@
 package ru.geeekbrains.princeschdailypicture.ui.main
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.transition.Slide
+import androidx.transition.TransitionManager
 import coil.api.load
 import ru.geeekbrains.princeschdailypicture.R
 import ru.geeekbrains.princeschdailypicture.data.AppState
@@ -25,6 +28,8 @@ class MarsRoverFragment : Fragment() {
     }
 
     private var dateForAPI: String? = null
+    private var dateIsVisible = true
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,16 +45,22 @@ class MarsRoverFragment : Fragment() {
 
         with(binding) {
             marsButton.setOnClickListener {
-                val day = marsRoverDatePicker.dayOfMonth
-                val month = marsRoverDatePicker.month + 1
-                val year = marsRoverDatePicker.year
+                if (dateIsVisible){
+                    val day = marsRoverDatePicker.dayOfMonth
+                    val month = marsRoverDatePicker.month + 1
+                    val year = marsRoverDatePicker.year
 
-                dateForAPI = if (month < 10) {
-                    "${year}-0${month}-${day}"
+                    dateForAPI = if (month < 10) {
+                        "${year}-0${month}-${day}"
+                    } else {
+                        "${year}-${month}-${day}"
+                    }
+                    viewModel.getMarsRoverPhotosFromServer(dateForAPI!!)
                 } else {
-                    "${year}-${month}-${day}"
+                    TransitionManager.beginDelayedTransition(rootMarsFragment, Slide(Gravity.TOP))
+                    dateIsVisible = !dateIsVisible
+                    marsRoverDatePicker.show()
                 }
-                viewModel.getMarsRoverPhotosFromServer(dateForAPI!!)
             }
         }
 
@@ -63,15 +74,13 @@ class MarsRoverFragment : Fragment() {
             }
             is AppState.Error -> {
                 with(binding) {
-                    marsText.text = data.error.toString()
-                    marsText.show()
+                    rootMarsFragment.showMessage(data.error.toString())
                 }
             }
             is AppState.SuccessMarsRover -> {
                 if (data.serverResponseDataMR.photos.isEmpty()) {
                     with(binding){
-                        marsText.text = getString(R.string.empty_array)
-                        marsText.show()
+                        rootMarsFragment.showMessage(getString(R.string.empty_array))
                     }
                 } else {
                     val serverResponseData = data.serverResponseDataMR.photos
@@ -79,12 +88,13 @@ class MarsRoverFragment : Fragment() {
                     //TODO обработать все элементы массива. доработать разные камеры, чтоб не падало при отсутвии фото с curiosity в выбранный день
                     if (image.isNullOrEmpty()) {
                         with(binding) {
-                            marsText.text = getString(R.string.url_null_or_empty)
-                            marsText.show()
+                            rootMarsFragment.showMessage(getString(R.string.url_null_or_empty))
                         }
                     } else {
                         with(binding) {
-                            marsText.hide()
+                            TransitionManager.beginDelayedTransition(rootMarsFragment, Slide(Gravity.TOP))
+                            dateIsVisible = !dateIsVisible
+                            marsRoverDatePicker.hide()
                             marsRoverImageView.load(image) {
                                 error(R.drawable.ic_no_photo_vector)
                                 placeholder(R.drawable.loading_animation)
