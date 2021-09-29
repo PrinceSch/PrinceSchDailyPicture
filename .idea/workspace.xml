@@ -31,10 +31,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76b3062d-9cae-422f-ad75-ecee74f9f3f3" name="Default Changelist" comment="потыкалась в Layout Behaviors, даже смогла вписать свой параметр :)">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_magnifier.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main_end.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/fragment_main_scene.xml" afterDir="false" />
+    <list default="true" id="76b3062d-9cae-422f-ad75-ecee74f9f3f3" name="Default Changelist" comment="MotionLayout">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/test/ExplodeTestFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/test/TestFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/separator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_test_explode.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_test_explode.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -46,9 +48,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_09_2021_23_09_[Default_Changelist]/insight_background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_09_2021_23_09_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_09_2021_23_09__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/EpicFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/EpicFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/MainFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/MainFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main_start.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/MarsRoverFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/MarsRoverFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/TestFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_epic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_epic.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main_end.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main_start.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_marsrover.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_marsrover.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/fragment_main_scene.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,16 +108,16 @@
         <option value="layoutResourceFile_vertical" />
         <option value="valueResourceFile" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
-        <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lesson3" />
+        <entry key="$PROJECT_DIR$" value="lesson4" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -120,6 +135,7 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="VirtualDevicePath@C:\Users\Win10_Game_OS\.android\avd\Nexus_5_API_30.avd" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-25T09:05:56.461409500Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android-custom-viewB:/Study/PrinceSchDailyPicture/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/EquilateralImageView.kt_SELECTED" value="EquilateralImageView" />
     <property name="android-custom-viewB:/Study/PrinceSchDailyPicture/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/MylImageView.kt_SELECTED" value="MylImageView" />
     <property name="android-custom-viewB:/Study/PrinceSchDailyPicture/app/src/main/java/ru/geeekbrains/princeschdailypicture/utlis/MyImageView.kt_SELECTED" value="CustomImageView" />
@@ -145,6 +161,7 @@
       <recent name="B:\Study\PrinceSchDailyPicture\app\src\main\res\drawable" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="ru.geeekbrains.princeschdailypicture.ui.test" />
       <recent name="ru.geeekbrains.princeschdailypicture.data" />
       <recent name="ru.geeekbrains.princeschdailypicture.viewmodel" />
     </key>
@@ -379,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632675233676</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="MotionLayout">
+      <created>1632680508839</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1632680508839</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -415,6 +439,7 @@
     <MESSAGE value="потыкала в барьеры" />
     <MESSAGE value="разобралась с круговым расположением" />
     <MESSAGE value="потыкалась в Layout Behaviors, даже смогла вписать свой параметр :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="потыкалась в Layout Behaviors, даже смогла вписать свой параметр :)" />
+    <MESSAGE value="MotionLayout" />
+    <option name="LAST_COMMIT_MESSAGE" value="MotionLayout" />
   </component>
 </project>

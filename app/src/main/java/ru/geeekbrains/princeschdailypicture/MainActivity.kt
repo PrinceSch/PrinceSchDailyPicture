@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ru.geeekbrains.princeschdailypicture.databinding.ActivityMainBinding
 import ru.geeekbrains.princeschdailypicture.ui.main.*
+import ru.geeekbrains.princeschdailypicture.ui.test.TestFragment
 
 var THEME_ID = R.style.MainTheme
 
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.app_bar_test -> {
                 binding.viewPager.adapter = null
+                binding.tabLayout.hide()
                 this@MainActivity.supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.container, TestFragment.newInstance())
