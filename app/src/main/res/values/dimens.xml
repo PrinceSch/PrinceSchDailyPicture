@@ -7,4 +7,6 @@
     <dimen name="buttonCornerSize">20dp</dimen>
     <dimen name="insight_header_size">60sp</dimen>
     <dimen name="insight_text_size">40sp</dimen>
+    <dimen name="card_margin">2dp</dimen>
+    <dimen name="list_margin">5dp</dimen>
 </resources>

@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/app_bar_fav"
-        android:icon="@drawable/ic_favourite_menu"
-        android:title="@string/favourite"
+        android:id="@+id/app_bar_list"
+        android:icon="@drawable/ic_todolist"
+        android:title="@string/todo_list"
         app:showAsAction="ifRoom" />
 
     <item
@@ -14,9 +14,10 @@
         android:title="@string/settings"
         app:showAsAction="ifRoom" />
 
+
     <item
         android:id="@+id/app_bar_test"
         android:icon="@drawable/ic_test"
-        android:title="@string/settings"
+        android:title="@string/test_fragment"
         app:showAsAction="ifRoom" />
 </menu>

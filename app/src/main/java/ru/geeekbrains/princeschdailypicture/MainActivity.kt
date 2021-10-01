@@ -3,9 +3,9 @@ package ru.geeekbrains.princeschdailypicture
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ru.geeekbrains.princeschdailypicture.databinding.ActivityMainBinding
+import ru.geeekbrains.princeschdailypicture.ui.listTODO.ListFragment
 import ru.geeekbrains.princeschdailypicture.ui.main.*
 import ru.geeekbrains.princeschdailypicture.ui.test.TestFragment
 
@@ -34,13 +34,20 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> Toast.makeText(
-                this,
-                getString(R.string.favourite),
-                Toast.LENGTH_SHORT
-            ).show()
+
+            R.id.app_bar_list -> {
+                binding.viewPager.adapter = null
+                binding.tabLayout.hide()
+                this@MainActivity.supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container, ListFragment.newInstance())
+                    .addToBackStack("")
+                    .commit()
+            }
+
             R.id.app_bar_settings -> {
                 binding.viewPager.adapter = null
+                binding.tabLayout.hide()
                 this@MainActivity.supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.container, SettingsFragment.newInstance())
@@ -63,5 +70,4 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
 }

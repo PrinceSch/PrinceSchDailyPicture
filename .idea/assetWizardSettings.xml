@@ -306,7 +306,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/B:/program%20files/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/warning/baseline_warning_24.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/list_alt/baseline_list_alt_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -317,7 +317,7 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="b6b1bc" />
-                            <entry key="outputName" value="ic_test" />
+                            <entry key="outputName" value="ic_todolist" />
                             <entry key="sourceFile" value="B:\Study\PrinceSchDailyPicture" />
                           </map>
                         </option>

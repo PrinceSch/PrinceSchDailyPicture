@@ -33,4 +33,6 @@
         The days and seasons are comparable to those of Earth, because the rotational period as well as the tilt of the rotational axis relative to the ecliptic plane are similar. Mars is the site of Olympus Mons, the largest volcano and highest known mountain on any planet in the Solar System, and of Valles Marineris, one of the largest canyons in the Solar System.
         The smooth Borealis basin in the Northern Hemisphere covers 40% of the planet and may be a giant impact feature.
         Mars has two moons, Phobos and Deimos, which are small and irregularly shaped. These may be captured asteroids, similar to 5261 Eureka, a Mars trojan.</string>
+    <string name="todo_list">TODO List</string>
+    <string name="test_fragment">Test Fragment</string>
 </resources>
