@@ -7,7 +7,7 @@
     app:cardBackgroundColor="@color/textColor"
     app:cardCornerRadius="@dimen/card_margin">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/card_margin"
@@ -20,13 +20,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="@dimen/buttonTextSize" />
+            android:textSize="@dimen/buttonTextSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/photoBody"/>
 
         <ru.geeekbrains.princeschdailypicture.utils.MyImageView
             android:id="@+id/photoBody"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/photoHeader"/>
 
-    </LinearLayout>
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/photoAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/photoBody"
+            app:layout_constraintEnd_toStartOf="@id/photoDelete"
+            android:src="@drawable/ic_plus_fab"
+            android:backgroundTint="@color/mainBackground"/>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/photoDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/photoAdd"
+            app:layout_constraintTop_toBottomOf="@id/photoBody"
+            android:src="@drawable/ic_delete"
+            android:backgroundTint="@color/mainBackground"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

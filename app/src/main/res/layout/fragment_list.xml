@@ -5,6 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listRecycler"
         android:layout_width="match_parent"
@@ -15,5 +22,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:spanCount="2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/listRecyclerFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_500"
+        app:backgroundTint="@color/purple_700"
+        android:layout_margin="@dimen/def_padding"
+        android:src="@drawable/ic_plus_fab"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/listRecyclerNote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_decorator"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="@dimen/def_padding"
+        app:layout_constraintBottom_toTopOf="@id/listRecyclerFAB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/line">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/newNoteHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/buttonTextSize"
+            app:backgroundTint="@color/textColor" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/newNoteBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="false" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/newNoteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/done" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

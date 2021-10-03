@@ -17,6 +17,7 @@
         <item name="android:colorBackground">@color/mainBackground</item>
         <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button.MyButton</item>
         <item name="android:textColor">@color/textColor</item>
+        <item name="editTextStyle">@style/Widget.AppCompat.EditText.MyText</item>
     </style>
 
     <style name="MarsTheme" parent="MainTheme">
@@ -61,6 +62,12 @@
         <item name="cornerRadius">@dimen/buttonCornerSize</item>
         <item name="android:padding">@dimen/def_padding</item>
         <item name="android:textColor">@color/textColor</item>
+        <item name="android:backgroundTint">@color/purple_700</item>
+    </style>
+
+    <style name="Widget.AppCompat.EditText.MyText">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="backgroundTint">@color/textColor</item>
     </style>
 
 </resources>

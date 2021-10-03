@@ -7,7 +7,7 @@
     app:cardBackgroundColor="@color/textColor"
     app:cardCornerRadius="@dimen/card_margin">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/card_margin"
@@ -20,13 +20,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="@dimen/buttonTextSize" />
+            android:textSize="@dimen/buttonTextSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/noteBody"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/noteBody"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/noteHeader"/>
 
-    </LinearLayout>
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/noteAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/noteBody"
+            app:layout_constraintEnd_toStartOf="@id/noteDelete"
+            android:src="@drawable/ic_plus_fab"
+            android:backgroundTint="@color/mainBackground"/>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/noteDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/noteAdd"
+            app:layout_constraintTop_toBottomOf="@id/noteBody"
+            android:src="@drawable/ic_delete"
+            android:backgroundTint="@color/mainBackground"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

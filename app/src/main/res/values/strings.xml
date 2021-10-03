@@ -35,4 +35,5 @@
         Mars has two moons, Phobos and Deimos, which are small and irregularly shaped. These may be captured asteroids, similar to 5261 Eureka, a Mars trojan.</string>
     <string name="todo_list">TODO List</string>
     <string name="test_fragment">Test Fragment</string>
+    <string name="done">Done</string>
 </resources>
