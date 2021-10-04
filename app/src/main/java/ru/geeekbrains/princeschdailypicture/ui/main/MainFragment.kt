@@ -2,11 +2,18 @@ package ru.geeekbrains.princeschdailypicture.ui.main
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.BackgroundColorSpan
+import android.text.style.ForegroundColorSpan
+import android.text.style.TypefaceSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.transition.ChangeBounds
@@ -69,7 +76,8 @@ class MainFragment : Fragment() {
                 set.addTransition(ChangeImageTransform())
 
                 TransitionManager.beginDelayedTransition(main, set)
-                imageView.scaleType = if (isExpanded) ImageView.ScaleType.CENTER_CROP else ImageView.ScaleType.FIT_CENTER
+                imageView.scaleType =
+                    if (isExpanded) ImageView.ScaleType.CENTER_CROP else ImageView.ScaleType.FIT_CENTER
             }
         }
 
@@ -98,11 +106,11 @@ class MainFragment : Fragment() {
         }
     }
 
-    private fun setData(dataPOD: AppState.SuccessPOD){
+    private fun setData(dataPOD: AppState.SuccessPOD) {
         val url = dataPOD.serverResponseData.url
         val hdurl = dataPOD.serverResponseData.hdurl
-        if (!url.isNullOrEmpty() && hdurl.isNullOrEmpty()){
-            with(binding){
+        if (!url.isNullOrEmpty() && hdurl.isNullOrEmpty()) {
+            with(binding) {
                 imageView.hide()
                 videoURL.show()
                 videoURL.text = getString(R.string.dailyVideo)
@@ -115,10 +123,7 @@ class MainFragment : Fragment() {
         } else {
             with(binding) {
                 includedLayout.loadingLayout.hide()
-                descriptionHeader.text =
-                    dataPOD.serverResponseData.title
-                description.text =
-                    dataPOD.serverResponseData.explanation
+                spanText(dataPOD.serverResponseData.title, dataPOD.serverResponseData.explanation)
                 if (isHD) {
                     imageView.load(hdurl) {
                         error(R.drawable.ic_no_photo_vector)
@@ -132,6 +137,45 @@ class MainFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun spanText(title: String?, explanation: String?) {
+        var end = 1
+        for (char in title!!.indices) {
+            if (title[char] == ' ') {
+                end = char
+                break
+            }
+        }
+
+        val spanTitle = SpannableString(title)
+        spanTitle.setSpan(
+            ForegroundColorSpan(resources.getColor(R.color.secondMars)),
+            0,
+            end,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            spanTitle.setSpan(ResourcesCompat.getFont(requireContext(), R.font.griffy)?.let { TypefaceSpan(it) }, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            //с вариантом из урока почему-то падает с ошибкой android.content.res.Resources$NotFoundException: Font resource ID #0x7f090002
+        }
+        binding.descriptionHeader.text = spanTitle
+
+        for (char in explanation!!.indices) {
+            if (explanation[char] == ' ') {
+                end = char
+                break
+            }
+        }
+
+        val spanDesc = SpannableString(explanation)
+        spanDesc.setSpan(
+            BackgroundColorSpan(resources.getColor(R.color.secondDarkVenus)),
+            0,
+            end,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        binding.description.text = spanDesc
     }
 
     override fun onDestroy() {

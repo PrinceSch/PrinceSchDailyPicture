@@ -31,11 +31,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76b3062d-9cae-422f-ad75-ecee74f9f3f3" name="Default Changelist" comment="разобралась с удалением\добавлением заметок">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/listTODO/ItemTouchHelperAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/listTODO/ItemTouchHelperCallback.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/card_base.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/card_selected.xml" afterDir="false" />
+    <list default="true" id="76b3062d-9cae-422f-ad75-ecee74f9f3f3" name="Default Changelist" comment="добавила несколько разных span в текст">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/griffy.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -47,9 +44,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/listTODO/ListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/listTODO/ListFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/listTODO/ListRecyclerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/listTODO/ListRecyclerAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recycler_item_note.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_item_note.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/MainFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/geeekbrains/princeschdailypicture/ui/main/MainFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/preloaded_fonts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/preloaded_fonts.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +102,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="c7babd2c53d784084259bbe1a2ced7dfe1d5fd6d" />
+        <entry key="$PROJECT_DIR$" value="lesson6" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -421,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633262150841</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="добавила перемещение и удаление заметок по свайпу">
+      <created>1633327801639</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1633327801639</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -437,7 +443,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. Изучите API NASA, который мы будем использовать в течение курса, и продумайте, как вы выстроите своё приложение, какие там будут экраны.&#10;2. Создайте первый экран приложения с фотографией дня." />
     <MESSAGE value="3. Добавьте описание (приходит с сервера) под фотографией в виде текстовой подписи или в виде BottomSheet." />
     <MESSAGE value="4. Добавьте текстовое поле для поиска неизвестных слов в «Википедии»." />
     <MESSAGE value="5. Добавьте адаптивную иконку для вашего приложения." />
@@ -461,7 +466,9 @@
     <MESSAGE value="разобралась с анимацией через Transition" />
     <MESSAGE value="сделала разные типы карточек и header&#10;заметка: не нашла, как при использовании gridLayoutManager растянуть header на все верхние колонки, это реализуемо?" />
     <MESSAGE value="разобралась с удалением\добавлением заметок" />
-    <option name="LAST_COMMIT_MESSAGE" value="разобралась с удалением\добавлением заметок" />
+    <MESSAGE value="добавила перемещение и удаление заметок по свайпу" />
+    <MESSAGE value="добавила несколько разных span в текст" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавила несколько разных span в текст" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2205" y="158" key="#PSD" timestamp="1632920607702">
@@ -489,30 +496,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="773" y="263" key="AndroidCreateXmlResourceDialog/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633248447787" />
-    <state width="1865" height="267" key="GridCell.Tab.0.bottom" timestamp="1633261854383">
+    <state x="562" y="216" key="Downloadable.Font.Dialog.Size" timestamp="1633354564862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="267" key="GridCell.Tab.0.bottom/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633261854383" />
-    <state width="1865" height="267" key="GridCell.Tab.0.center" timestamp="1633261854382">
+    <state x="562" y="216" key="Downloadable.Font.Dialog.Size/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633354564862" />
+    <state width="1865" height="267" key="GridCell.Tab.0.bottom" timestamp="1633354953387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="267" key="GridCell.Tab.0.center/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633261854382" />
-    <state width="1865" height="267" key="GridCell.Tab.0.left" timestamp="1633261854382">
+    <state width="1865" height="267" key="GridCell.Tab.0.bottom/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633354953387" />
+    <state width="1865" height="267" key="GridCell.Tab.0.center" timestamp="1633354953387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="267" key="GridCell.Tab.0.left/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633261854382" />
-    <state width="1865" height="267" key="GridCell.Tab.0.right" timestamp="1633261854382">
+    <state width="1865" height="267" key="GridCell.Tab.0.center/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633354953387" />
+    <state width="1865" height="267" key="GridCell.Tab.0.left" timestamp="1633354953387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="267" key="GridCell.Tab.0.right/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633261854382" />
+    <state width="1865" height="267" key="GridCell.Tab.0.left/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633354953387" />
+    <state width="1865" height="267" key="GridCell.Tab.0.right" timestamp="1633354953387">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="267" key="GridCell.Tab.0.right/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633354953387" />
+    <state width="1865" height="267" key="GridCell.Tab.1.bottom" timestamp="1633352851703">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="267" key="GridCell.Tab.1.bottom/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633352851703" />
+    <state width="1865" height="267" key="GridCell.Tab.1.center" timestamp="1633352851703">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="267" key="GridCell.Tab.1.center/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633352851703" />
+    <state width="1865" height="267" key="GridCell.Tab.1.left" timestamp="1633352851703">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="267" key="GridCell.Tab.1.left/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633352851703" />
+    <state width="1865" height="267" key="GridCell.Tab.1.right" timestamp="1633352851703">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="267" key="GridCell.Tab.1.right/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633352851703" />
     <state x="2189" y="0" key="SettingsEditor" timestamp="1632920730422">
       <screen x="1920" y="0" width="1536" height="824" />
     </state>
     <state x="2189" y="0" key="SettingsEditor/1920.0.1536.824/0.0.1920.1040@1920.0.1536.824" timestamp="1632920730422" />
-    <state x="452" y="172" key="Vcs.Push.Dialog.v2" timestamp="1633262153514">
+    <state x="452" y="172" key="Vcs.Push.Dialog.v2" timestamp="1633327839912">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="452" y="172" key="Vcs.Push.Dialog.v2/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633262153514" />
+    <state x="452" y="172" key="Vcs.Push.Dialog.v2/1920.0.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1633327839912" />
     <state x="589" y="284" key="com.android.tools.idea.run.deployment.SelectMultipleDevicesDialog" timestamp="1633262002988">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
