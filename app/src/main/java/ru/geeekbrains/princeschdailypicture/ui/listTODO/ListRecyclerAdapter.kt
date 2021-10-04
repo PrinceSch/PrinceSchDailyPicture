@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import ru.geeekbrains.princeschdailypicture.R
 import ru.geeekbrains.princeschdailypicture.data.listTODO.Note
 import ru.geeekbrains.princeschdailypicture.data.listTODO.OnListItemClickListener
 import ru.geeekbrains.princeschdailypicture.databinding.RecyclerHeaderBinding
@@ -12,7 +13,7 @@ import ru.geeekbrains.princeschdailypicture.databinding.RecyclerItemNoteBinding
 class ListRecyclerAdapter(
     private var onListItemClickListener: OnListItemClickListener,
     private var note: MutableList<Note>
-) : RecyclerView.Adapter<BaseViewHolder>() {
+) : RecyclerView.Adapter<BaseViewHolder>(), ItemTouchHelperAdapter {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         return when (viewType) {
@@ -50,8 +51,20 @@ class ListRecyclerAdapter(
         return note.size
     }
 
+    override fun onItemMove(fromPosition: Int, toPosition: Int) {
+        note.removeAt(fromPosition).apply {
+            note.add(if (toPosition > fromPosition) toPosition - 1 else toPosition, this)
+        }
+        notifyItemMoved(fromPosition, toPosition)
+    }
 
-    inner class NoteViewHolder(view: View) : BaseViewHolder(view) {
+    override fun onItemDismiss(position: Int) {
+        note.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
+
+    inner class NoteViewHolder(view: View) : BaseViewHolder(view), ItemTouchHelperViewHolder {
         override fun bind(note: Note) {
             if (layoutPosition != RecyclerView.NO_POSITION) {
                 RecyclerItemNoteBinding.bind(itemView).apply {
@@ -72,6 +85,16 @@ class ListRecyclerAdapter(
             note.add(layoutPosition, Note("HeaderNew", "BodyNew"))
             notifyItemInserted(layoutPosition)
         }
+
+        override fun onItemSelected() {
+            itemView.setBackgroundResource(R.drawable.card_selected)
+        }
+
+        override fun onItemClear() {
+            itemView.setBackgroundResource(R.drawable.card_base)
+        }
+
+
     }
 
 

@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/list_margin"
-    app:cardBackgroundColor="@color/textColor"
-    app:cardCornerRadius="@dimen/card_margin">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/noteCard"
+        android:background="@drawable/card_base"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/card_margin"
-        android:background="@color/mainBackground"
         android:orientation="vertical"
         android:padding="@dimen/def_padding">
 
@@ -55,5 +50,3 @@
             android:backgroundTint="@color/mainBackground"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.cardview.widget.CardView>

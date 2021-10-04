@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
 import ru.geeekbrains.princeschdailypicture.R
 import ru.geeekbrains.princeschdailypicture.data.listTODO.Note
 import ru.geeekbrains.princeschdailypicture.data.listTODO.OnListItemClickListener
@@ -74,9 +75,11 @@ class ListFragment : Fragment() {
                     ContextCompat.getDrawable(requireContext(), R.drawable.ic_plus_fab)
                 )
                 listRecyclerNote.hide()
-                val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                val imm =
+                    context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(listRecycler.windowToken, 0)
             }
+            ItemTouchHelper(ItemTouchHelperCallback(adapter)).attachToRecyclerView(listRecycler)
         }
     }
 
