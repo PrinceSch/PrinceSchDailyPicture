@@ -96,7 +96,7 @@ class MainFragment : Fragment() {
                 } else setData(data)
             }
             is AppState.Loading -> {
-                binding.includedLayout.loadingLayout.show()
+                binding.imageView.load(R.drawable.loading_animation)
             }
             is AppState.Error -> {
                 with(binding) {
@@ -122,7 +122,6 @@ class MainFragment : Fragment() {
             }
         } else {
             with(binding) {
-                includedLayout.loadingLayout.hide()
                 spanText(dataPOD.serverResponseData.title, dataPOD.serverResponseData.explanation)
                 if (isHD) {
                     imageView.load(hdurl) {
