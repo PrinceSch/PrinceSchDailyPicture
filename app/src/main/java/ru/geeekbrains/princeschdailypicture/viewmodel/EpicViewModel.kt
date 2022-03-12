@@ -42,4 +42,8 @@ class EpicViewModel(
         }
     }
 
+    fun checkResponse(response: Response<List<EpicServerResponseData>>, serverResponse: List<EpicServerResponseData>?): Boolean{
+        return response.isSuccessful && serverResponse != null
+    }
+
 }
