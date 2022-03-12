@@ -88,9 +88,10 @@
                 android:id="@+id/description_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/cinzel_decorative_black"
-                android:textStyle="bold"
                 android:layout_marginTop="@dimen/def_padding"
+                android:fontFamily="@font/cinzel_decorative_black"
+                android:textSize="@dimen/headerSize"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -107,9 +108,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-
-    <include
-        android:id="@+id/includedLayout"
-        layout="@layout/layout_loading" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

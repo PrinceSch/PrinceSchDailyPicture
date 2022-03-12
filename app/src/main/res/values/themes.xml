@@ -70,4 +70,8 @@
         <item name="backgroundTint">@color/textColor</item>
     </style>
 
+    <style name="MainTheme.Splash">
+        <item name="android:windowBackground">@drawable/splash_background_drawable</item>
+    </style>
+
 </resources>

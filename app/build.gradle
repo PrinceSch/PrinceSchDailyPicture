@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "ru.geeekbrains.princeschdailypicture"
-        minSdkVersion 26
+        minSdkVersion 28
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
